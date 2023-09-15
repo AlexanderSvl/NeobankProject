@@ -1,5 +1,5 @@
-﻿using CarTradeWebsite.Models;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
+using NeobankProject.Models;
 
 namespace CarTradeWebsite.Context
 {
@@ -15,9 +15,9 @@ namespace CarTradeWebsite.Context
         }
 
         public DbSet<UserModel> Users { get; set; }
-        public DbSet<PostModel> Posts { get; set; }
-        public DbSet<OptionModel> Options { get; set; }
-        public DbSet<ImageModel> Images { get; set; }
+        public DbSet<CurrencyModel> Currencies { get; set; }
+        public DbSet<WalletModel> Wallets { get; set; }
+
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -27,7 +27,7 @@ namespace CarTradeWebsite.Context
                 .Build();
 
             optionsBuilder
-                .UseSqlServer("Server=(localdb)\\MSSQLLocalDB;Database=CarTradeDB;Integrated Security=True;");
+                .UseSqlServer("Server=(localdb)\\MSSQLLocalDB;Database=NeobankDB;Integrated Security=True;");
         }
     }
 }
