@@ -2,18 +2,18 @@
 
 namespace NeobankProject.Models
 {
-    public class WalletModel
+    public class CurrencyModel
     {
         [Key]
         public Guid Id { get; set; }
 
         [Required]
-        public UserModel User { get; set; }
+        public string Code { get; set; }
 
         [Required]
-        public decimal Value { get; set; }
+        public string Symbol { get; set; }
 
         [Required]
-        public CurrencyModel Currency { get; set; }
+        public int NumericCode { get; set; } 
     }
 }
