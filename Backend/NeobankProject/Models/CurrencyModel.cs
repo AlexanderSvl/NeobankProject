@@ -8,6 +8,7 @@ namespace NeobankProject.Models
         public Guid Id { get; set; }
 
         [Required]
+        [StringLength(3)]
         public string Code { get; set; }
 
         [Required]
