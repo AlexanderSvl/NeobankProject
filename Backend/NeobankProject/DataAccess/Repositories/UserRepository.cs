@@ -61,8 +61,10 @@ namespace NeobankProject.Repositories
 
             if (userToUpdate != null)
             {
+                userToUpdate.UserName = user.UserName;
                 userToUpdate.FirstName = user.FirstName;
                 userToUpdate.LastName = user.LastName;
+                userToUpdate.Role = user.Role;
                 userToUpdate.Email = user.Email;
 
                 await context.SaveChangesAsync();

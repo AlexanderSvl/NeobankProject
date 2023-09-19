@@ -11,7 +11,7 @@ namespace NeobankProject.Models
         public UserModel User { get; set; }
 
         [Required]
-        public decimal Value { get; set; }
+        public decimal Balance { get; set; }
 
         [Required]
         public CurrencyModel Currency { get; set; }
