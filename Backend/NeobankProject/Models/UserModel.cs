@@ -5,7 +5,7 @@ namespace NeobankProject.Models
     public class UserModel
     {
         [Key] 
-        public Guid Id { get; set; }
+        public Guid ID { get; set; }
 
         [Required]
         [StringLength(100)]

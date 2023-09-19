@@ -15,6 +15,6 @@ namespace NeobankProject.Models
         public string Symbol { get; set; }
 
         [Required]
-        public int NumericCode { get; set; } 
+        public int NumericCode { get; set; }  
     }
 }
