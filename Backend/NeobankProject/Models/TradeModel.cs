@@ -11,7 +11,10 @@ namespace NeobankProject.Models
         public StockModel Stock { get; set; }
 
         [Required]
-        public UserModel Buyer { get; set; }
+        public UserModel User { get; set; }
+        
+        [Required]
+        public string TradeType { get; set; }
 
         [Required]
         public decimal Price { get; set; }

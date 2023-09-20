@@ -8,6 +8,9 @@ namespace NeobankProject.Models
         public Guid Id { get; set; }
 
         [Required]
+        public bool IsArchived { get; set; }
+
+        [Required]
         public string OrderType { get; set; }
 
         [Required]

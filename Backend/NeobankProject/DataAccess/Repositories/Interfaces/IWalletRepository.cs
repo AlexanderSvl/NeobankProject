@@ -4,9 +4,9 @@ namespace NeobankProject.DataAccess.Repositories.Interfaces
 {
     public interface IWalletRepository
     {
-        Task<WalletModel> CreateWallet(WalletModel wallet);
-        Task<WalletModel> AddBalanceToWallet(Guid walletId, decimal ballance);
-        Task<WalletModel> RemoveBalanceFromWallet(Guid walletId, decimal ballance);
-        Task<WalletModel> ChangeWalletCurrency(Guid walletId, CurrencyModel newCurrency);
+        Task<WalletModel> CreateWalletAsync(WalletModel wallet);
+        Task<WalletModel> AddBalanceToWalletAsync(Guid walletId, decimal ballance);
+        Task<WalletModel> RemoveBalanceFromWalletAsync(Guid walletId, decimal ballance);
+        Task<WalletModel> ChangeWalletCurrencyAsync(Guid walletId, CurrencyModel newCurrency);
     }
 }

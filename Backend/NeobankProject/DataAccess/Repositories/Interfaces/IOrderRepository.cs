@@ -7,5 +7,6 @@ namespace NeobankProject.DataAccess.Repositories.Interfaces
         Task<OrderModel> AddOrderAsync(OrderModel order);
         Task<bool> DeleteOrderAsync(Guid orderId);
         Task<OrderModel> GetOrderByIDAsync(Guid ID);
+        Task<bool> ExecuteOrderAsync(Guid ID, int quantity);
     }
 }
