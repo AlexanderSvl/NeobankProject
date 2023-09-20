@@ -11,7 +11,7 @@ namespace NeobankProject.DataAccess.Repositories
         private static DatabaseContext context = new DatabaseContext();
         private TradeRepository tradeRepository = new TradeRepository();
 
-        public async Task<OrderModel> AddOrderAsync(OrderModel order)
+        public async Task<OrderModel> CreateOrderAsync(OrderModel order)
         {
             await context.Orders.AddAsync(order);
             await context.SaveChangesAsync();
@@ -68,6 +68,15 @@ namespace NeobankProject.DataAccess.Repositories
             await context.SaveChangesAsync();
 
             return true;
+        }
+
+        public async Task<IEnumerable<OrderModel>> GetAllOrdersFromUserAsync(Guid userId)
+        {
+            IEnumerable<OrderModel> ordersFromUser = await context.Orders
+                .Where(order => order.User.ID == userId)
+                .ToListAsync();
+
+            return ordersFromUser;
         }
     }
 }
