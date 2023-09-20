@@ -15,6 +15,9 @@ namespace CarTradeWebsite.Context
         }
 
         public DbSet<UserModel> Users { get; set; }
+        public DbSet<OrderModel> Orders { get; set; }
+        public DbSet<TradeModel> Trades { get; set; }
+        public DbSet<StockModel> Stocks { get; set; }
         public DbSet<CurrencyModel> Currencies { get; set; }
         public DbSet<WalletModel> Wallets { get; set; }
 

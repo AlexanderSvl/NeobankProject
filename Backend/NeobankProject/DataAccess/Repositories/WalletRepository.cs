@@ -9,7 +9,7 @@ namespace NeobankProject.DataAccess.Repositories
     {
         private static DatabaseContext context = new DatabaseContext();
 
-        public async Task<WalletModel> AddBalanceToWallet(Guid walletId, decimal balance)
+        public async Task<WalletModel> AddBalanceToWalletAsync(Guid walletId, decimal balance)
         {
             WalletModel walletToAddMoneyTo = await context.Wallets
                 .Where(wallet => wallet.Id == walletId)
@@ -21,7 +21,7 @@ namespace NeobankProject.DataAccess.Repositories
             return walletToAddMoneyTo;
         }
 
-        public async Task<WalletModel> RemoveBalanceFromWallet(Guid walletId, decimal balance)
+        public async Task<WalletModel> RemoveBalanceFromWalletAsync(Guid walletId, decimal balance)
         {
             WalletModel walletToAddMoneyTo = await context.Wallets
                 .Where(wallet => wallet.Id == walletId)
@@ -33,7 +33,7 @@ namespace NeobankProject.DataAccess.Repositories
             return walletToAddMoneyTo;
         }
 
-        public async Task<WalletModel> ChangeWalletCurrency(Guid walletId, CurrencyModel newCurrency)
+        public async Task<WalletModel> ChangeWalletCurrencyAsync(Guid walletId, CurrencyModel newCurrency)
         {
             WalletModel walletToChangeCurrencyTo = await context.Wallets
                 .Where(wallet => wallet.Id == walletId)
@@ -45,17 +45,12 @@ namespace NeobankProject.DataAccess.Repositories
             return walletToChangeCurrencyTo;
         }
 
-        public async Task<WalletModel> CreateWallet(WalletModel wallet)
+        public async Task<WalletModel> CreateWalletAsync(WalletModel wallet)
         {
             await context.Wallets.AddAsync(wallet);
             await context.SaveChangesAsync();
 
             return wallet;
         }
-
-        //public decimal UpdateBalance(decimal balance, CurrencyModel oldCurrency, CurrencyModel newCurrency)
-        //{
-        //    decimal oldBalance = oldCurrency.
-        //}
     }
 }
