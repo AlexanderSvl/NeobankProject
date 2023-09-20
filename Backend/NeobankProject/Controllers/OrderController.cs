@@ -26,7 +26,7 @@ namespace NeobankProject.Controllers
             return Ok(order);
         }
 
-        [HttpGet("orders/get/user={ID}")]
+        [HttpGet("orders/get/userId={ID}")]
         public async Task<ActionResult<IEnumerable<OrderModel>>> GetAllOrdersFromUser(Guid ID)
         {
             IEnumerable<OrderModel> order = await this._orderRepository.GetAllOrdersFromUserAsync(ID);
