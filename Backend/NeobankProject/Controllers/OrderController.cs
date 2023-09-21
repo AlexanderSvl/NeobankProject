@@ -6,7 +6,7 @@ namespace NeobankProject.Controllers
 {
     public class OrderController : ControllerBase
     {
-        public IOrderRepository _orderRepository { get; set; }
+        private IOrderRepository _orderRepository { get; set; }
 
         public OrderController(IOrderRepository orderRepository)
         {
@@ -53,7 +53,7 @@ namespace NeobankProject.Controllers
         }
 
         [HttpPost("orders/{ID}/execute")]
-        public async Task<ActionResult<OrderModel>> CreateOrder(Guid ID, [FromBody] int quantity)
+        public async Task<ActionResult<OrderModel>> ExecuteOrder(Guid ID, [FromBody] int quantity)
         {
             bool isOrderCreated = await this._orderRepository.ExecuteOrderAsync(ID, quantity);
 

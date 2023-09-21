@@ -34,6 +34,19 @@ namespace NeobankProject.DataAccess.Repositories
             return false;
         }
 
+        public async Task<IEnumerable<StockModel>> GetAllStocksAsync()
+        {
+            IEnumerable<StockModel> stocks = await context.Stocks
+                .ToListAsync();
+
+            if(stocks != null)
+            {
+                return stocks;
+            }
+
+            return null;
+        }
+
         public async Task<StockModel> GetStockByIdAsync(Guid Id)
         {
             StockModel stockToGet = await context.Stocks
