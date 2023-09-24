@@ -16,7 +16,7 @@ namespace NeobankProject.Models
         public string FirstName { get; set; }
 
         [Required]
-        [StringLength(100)]
+        [StringLength(110)]
         public string LastName { get; set; }
 
         [Required]
