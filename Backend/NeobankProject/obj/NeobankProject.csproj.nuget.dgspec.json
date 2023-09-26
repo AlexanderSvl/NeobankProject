@@ -1,25 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\User\\Desktop\\Neobank\\Backend\\NeobankProject\\NeobankProject.csproj": {}
+    "C:\\Users\\kolev\\Desktop\\NeobankProject\\NeobankProject\\Backend\\NeobankProject\\NeobankProject.csproj": {}
   },
   "projects": {
-    "C:\\Users\\User\\Desktop\\Neobank\\Backend\\NeobankProject\\NeobankProject.csproj": {
+    "C:\\Users\\kolev\\Desktop\\NeobankProject\\NeobankProject\\Backend\\NeobankProject\\NeobankProject.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\User\\Desktop\\Neobank\\Backend\\NeobankProject\\NeobankProject.csproj",
+        "projectUniqueName": "C:\\Users\\kolev\\Desktop\\NeobankProject\\NeobankProject\\Backend\\NeobankProject\\NeobankProject.csproj",
         "projectName": "NeobankProject",
-        "projectPath": "C:\\Users\\User\\Desktop\\Neobank\\Backend\\NeobankProject\\NeobankProject.csproj",
-        "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\User\\Desktop\\Neobank\\Backend\\NeobankProject\\obj\\",
+        "projectPath": "C:\\Users\\kolev\\Desktop\\NeobankProject\\NeobankProject\\Backend\\NeobankProject\\NeobankProject.csproj",
+        "packagesPath": "C:\\Users\\kolev\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\kolev\\Desktop\\NeobankProject\\NeobankProject\\Backend\\NeobankProject\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\kolev\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -92,7 +90,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.102\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.101\\RuntimeIdentifierGraph.json"
         }
       }
     }
