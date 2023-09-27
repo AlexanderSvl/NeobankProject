@@ -16,5 +16,25 @@ namespace NeobankProject.DataAccess.Repositories
 
             return trade;
         }
+
+        public async Task<IEnumerable<TradeModel>> GetAllTradesAsync()
+        {
+            return await context.Trades
+                .ToListAsync();
+        }
+
+        public async Task<IEnumerable<TradeModel>> GetAllTradesFromUserAsync(Guid userId)
+        {
+            return await context.Trades
+                .Where(trade => trade.User.ID == userId)
+                .ToListAsync();
+        }
+
+        public async Task<TradeModel> GetTradeByIdAsync(Guid ID)
+        {
+            return await context.Trades
+                .Where(trade => trade.Id == ID)
+                .FirstAsync();
+        }
     }
 }

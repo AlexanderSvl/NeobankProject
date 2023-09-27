@@ -72,11 +72,9 @@ namespace NeobankProject.DataAccess.Repositories
 
         public async Task<IEnumerable<OrderModel>> GetAllOrdersFromUserAsync(Guid userId)
         {
-            IEnumerable<OrderModel> ordersFromUser = await context.Orders
+            return await context.Orders
                 .Where(order => order.User.ID == userId)
                 .ToListAsync();
-
-            return ordersFromUser;
         }
     }
 }
