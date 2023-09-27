@@ -36,7 +36,7 @@ namespace NeobankProject.Controllers
                 return NoContent();
             }
 
-            return Ok();
+            return Ok(trades);
         }
 
         [HttpGet("trades/{ID}/get")]
