@@ -10,7 +10,7 @@ namespace NeobankProject.Controllers
 
         public OrderController(IOrderRepository orderRepository)
         {
-            this._orderRepository = _orderRepository;
+            this._orderRepository = orderRepository;
         }
 
         [HttpGet("orders/get/{ID}")]

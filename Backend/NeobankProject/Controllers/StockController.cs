@@ -14,7 +14,7 @@ namespace NeobankProject.Controllers
         }
 
         [HttpGet("stocks/{ID}/get")]
-        public async Task<ActionResult<IEnumerable<StockModel>>> GetStockById(Guid ID)
+        public async Task<ActionResult<StockModel>> GetStockById(Guid ID)
         {
             StockModel order = await this._stockRepository.GetStockByIdAsync(ID);
 
