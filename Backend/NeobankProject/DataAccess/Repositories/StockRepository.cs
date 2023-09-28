@@ -47,18 +47,10 @@ namespace NeobankProject.DataAccess.Repositories
             return null;
         }
 
-        public async Task<StockModel> GetStockByIdAsync(Guid Id)
+        public async Task<StockModel> GetStockByIdAsync(Guid ID)
         {
-            StockModel stockToGet = await context.Stocks
-                .Where(stock => stock.Id == Id)
-                .FirstAsync();
-
-            if(stockToGet != null)
-            {
-                return stockToGet;
-            }
-
-            return null;
+            return await context.Stocks
+                .FindAsync(ID);
         }
 
         public async Task<StockModel> UpdateStockAsync(Guid Id, StockModel updatedStock)

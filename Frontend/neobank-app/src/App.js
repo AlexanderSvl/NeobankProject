@@ -7,16 +7,13 @@ import LandingPage from './components/LandingPage';
 
 function App() {
     return (
-      <div>
-      <Router>
-          <Routes>
-            <Route path={'/register'} element={<Register />}></Route>
-            <Route path={'/'} element={<LandingPage />}></Route>
-          </Routes>
-      </Router>
-      </div>
-      
-    );  
+        <Router>
+            <Routes>
+                <Route path={'/register'} element={< Register />}></Route>
+                <Route path={'/'} element={< LandingPage />}></Route>
+            </Routes>
+        </Router>
+    );
 }
 
 export default App;

@@ -33,8 +33,7 @@ namespace NeobankProject.DataAccess.Repositories
         public async Task<TradeModel> GetTradeByIdAsync(Guid ID)
         {
             return await context.Trades
-                .Where(trade => trade.Id == ID)
-                .FirstAsync();
+                .FindAsync(ID);
         }
     }
 }

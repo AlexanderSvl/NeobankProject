@@ -2,7 +2,7 @@
 
 namespace NeobankProject.Models
 {
-    public class MessagesModel
+    public class MessageModel
     {
         [Key]
         public Guid Id { get; set; }

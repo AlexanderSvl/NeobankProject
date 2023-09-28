@@ -5,25 +5,25 @@ using NeobankProject.Models;
 
 namespace NeobankProject.Controllers
 {
-    public class MessagesController : ControllerBase
+    public class MessageController : ControllerBase
     {
         private IMessageRepository _messageRepository { get; set; }
 
-        public MessagesController(IMessageRepository messageRepository)
+        public MessageController(IMessageRepository messageRepository)
         {
             this._messageRepository = messageRepository;
         }
 
         [HttpGet("messages/all")]
-        public async Task<IEnumerable<MessagesModel>> GetMessagesAsync()
+        public async Task<IEnumerable<MessageModel>> GetMessagesAsync()
         {
             return await _messageRepository.GetMessagesAsync();
         }
 
         [HttpGet("messages/get/{Id}")]
-        public async Task<ActionResult<MessagesModel>> GetMessageById(Guid Id)
+        public async Task<ActionResult<MessageModel>> GetMessageById(Guid Id)
         {
-            MessagesModel targetMessage = await _messageRepository.GetMessageByIDAsync(Id);
+            MessageModel targetMessage = await _messageRepository.GetMessageByIDAsync(Id);
 
             if(targetMessage != null)
             {
@@ -34,7 +34,7 @@ namespace NeobankProject.Controllers
         }
 
         [HttpPost("messages/new")]
-        public async Task<ActionResult<MessagesModel>> AddMessage([FromBody] MessagesModel newMessage)
+        public async Task<ActionResult<MessageModel>> AddMessage([FromBody] MessageModel newMessage)
         {
             await _messageRepository.AddMessage(newMessage);
             return CreatedAtAction("GetMessageById", new { id = newMessage.Id }, newMessage);
@@ -42,7 +42,7 @@ namespace NeobankProject.Controllers
         }
 
         [HttpPut("messages/edit")]
-        public async Task<ActionResult<MessagesModel>> EditMessage(Guid Id, MessagesModel newMessage)
+        public async Task<ActionResult<MessageModel>> EditMessage(Guid Id, MessageModel newMessage)
         {
             bool succesfullyEditted = await _messageRepository.EdiMessageAsync(Id, newMessage);
 
@@ -55,7 +55,7 @@ namespace NeobankProject.Controllers
         }
 
         [HttpDelete("messages/delete")]
-        public async Task<ActionResult<MessagesModel>> DeleteMessage(Guid Id)
+        public async Task<ActionResult<MessageModel>> DeleteMessage(Guid Id)
         {
             bool succesfullyEditted = await _messageRepository.DeleteMessageAsync(Id);
 

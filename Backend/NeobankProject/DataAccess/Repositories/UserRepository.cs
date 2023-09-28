@@ -26,8 +26,7 @@ namespace NeobankProject.Repositories
         public async Task<UserModel> GetUserByIDAsync(Guid ID)
         {
             return await context.Users
-                .Where(user => user.ID == ID)
-                .FirstAsync();
+                .FindAsync(ID);
         }
 
         public async Task<IEnumerable<UserModel>> GetUsersAsync()

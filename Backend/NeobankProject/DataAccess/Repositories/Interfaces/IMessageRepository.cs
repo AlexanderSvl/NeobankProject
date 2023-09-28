@@ -5,11 +5,11 @@ namespace NeobankProject.DataAccess.Repositories.Interfaces
 {
     public interface IMessageRepository
     {
-        Task<IEnumerable<MessagesModel>> GetMessagesAsync();
-        Task AddMessage(MessagesModel message);
-        Task<bool> EdiMessageAsync(Guid messageId, MessagesModel newMessage);
+        Task<IEnumerable<MessageModel>> GetMessagesAsync();
+        Task AddMessage(MessageModel message);
+        Task<bool> EdiMessageAsync(Guid messageId, MessageModel newMessage);
         Task<bool> DeleteMessageAsync(Guid ID);
-        Task<MessagesModel> GetMessageByIDAsync(Guid ID);
+        Task<MessageModel> GetMessageByIDAsync(Guid ID);
         Task<int> GetTotalMessagesCountAsync();
     }
 }

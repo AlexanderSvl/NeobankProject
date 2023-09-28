@@ -39,8 +39,7 @@ namespace NeobankProject.DataAccess.Repositories
         public async Task<OrderModel> GetOrderByIDAsync(Guid ID)
         {
             return await context.Orders
-                .Where(order => order.Id == ID)
-                .FirstAsync();
+                .FindAsync(ID);
         }
 
         public async Task<bool> ExecuteOrderAsync(Guid ID, int quantity)

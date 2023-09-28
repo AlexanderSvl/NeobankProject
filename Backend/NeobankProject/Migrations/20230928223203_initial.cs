@@ -6,73 +6,36 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace NeobankProject.Migrations
 {
     /// <inheritdoc />
-    public partial class @new : Migration
+    public partial class initial : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
         {
-            migrationBuilder.DropForeignKey(
-                name: "FK_Wallets_Users_UserId",
-                table: "Wallets");
+            migrationBuilder.CreateTable(
+                name: "Currencies",
+                columns: table => new
+                {
+                    Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    Code = table.Column<string>(type: "nvarchar(3)", maxLength: 3, nullable: false),
+                    Symbol = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    NumericCode = table.Column<int>(type: "int", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Currencies", x => x.Id);
+                });
 
-            migrationBuilder.RenameColumn(
-                name: "UserId",
-                table: "Wallets",
-                newName: "UserID");
-
-            migrationBuilder.RenameColumn(
-                name: "Value",
-                table: "Wallets",
-                newName: "Balance");
-
-            migrationBuilder.RenameIndex(
-                name: "IX_Wallets_UserId",
-                table: "Wallets",
-                newName: "IX_Wallets_UserID");
-
-            migrationBuilder.RenameColumn(
-                name: "Id",
-                table: "Users",
-                newName: "ID");
-
-            migrationBuilder.AddColumn<string>(
-                name: "Type",
-                table: "Wallets",
-                type: "nvarchar(max)",
-                nullable: false,
-                defaultValue: "");
-
-            migrationBuilder.AddColumn<string>(
-                name: "FirstName",
-                table: "Users",
-                type: "nvarchar(100)",
-                maxLength: 100,
-                nullable: false,
-                defaultValue: "");
-
-            migrationBuilder.AddColumn<string>(
-                name: "LastName",
-                table: "Users",
-                type: "nvarchar(100)",
-                maxLength: 100,
-                nullable: false,
-                defaultValue: "");
-
-            migrationBuilder.AddColumn<string>(
-                name: "Role",
-                table: "Users",
-                type: "nvarchar(max)",
-                nullable: false,
-                defaultValue: "");
-
-            migrationBuilder.AlterColumn<string>(
-                name: "Code",
-                table: "Currencies",
-                type: "nvarchar(3)",
-                maxLength: 3,
-                nullable: false,
-                oldClrType: typeof(string),
-                oldType: "nvarchar(max)");
+            migrationBuilder.CreateTable(
+                name: "Messages",
+                columns: table => new
+                {
+                    Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    MessageValue = table.Column<string>(type: "nvarchar(max)", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Messages", x => x.Id);
+                });
 
             migrationBuilder.CreateTable(
                 name: "Stocks",
@@ -89,6 +52,23 @@ namespace NeobankProject.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Stocks", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Users",
+                columns: table => new
+                {
+                    ID = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    UserName = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false),
+                    FirstName = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false),
+                    LastName = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false),
+                    Role = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Email = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false),
+                    Password = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Users", x => x.ID);
                 });
 
             migrationBuilder.CreateTable(
@@ -148,6 +128,33 @@ namespace NeobankProject.Migrations
                         onDelete: ReferentialAction.Cascade);
                 });
 
+            migrationBuilder.CreateTable(
+                name: "Wallets",
+                columns: table => new
+                {
+                    Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    Type = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    UserID = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    Balance = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
+                    CurrencyId = table.Column<Guid>(type: "uniqueidentifier", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Wallets", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_Wallets_Currencies_CurrencyId",
+                        column: x => x.CurrencyId,
+                        principalTable: "Currencies",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_Wallets_Users_UserID",
+                        column: x => x.UserID,
+                        principalTable: "Users",
+                        principalColumn: "ID",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
             migrationBuilder.CreateIndex(
                 name: "IX_Orders_StockId",
                 table: "Orders",
@@ -168,21 +175,22 @@ namespace NeobankProject.Migrations
                 table: "Trades",
                 column: "UserID");
 
-            migrationBuilder.AddForeignKey(
-                name: "FK_Wallets_Users_UserID",
+            migrationBuilder.CreateIndex(
+                name: "IX_Wallets_CurrencyId",
                 table: "Wallets",
-                column: "UserID",
-                principalTable: "Users",
-                principalColumn: "ID",
-                onDelete: ReferentialAction.Cascade);
+                column: "CurrencyId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Wallets_UserID",
+                table: "Wallets",
+                column: "UserID");
         }
 
         /// <inheritdoc />
         protected override void Down(MigrationBuilder migrationBuilder)
         {
-            migrationBuilder.DropForeignKey(
-                name: "FK_Wallets_Users_UserID",
-                table: "Wallets");
+            migrationBuilder.DropTable(
+                name: "Messages");
 
             migrationBuilder.DropTable(
                 name: "Orders");
@@ -191,60 +199,16 @@ namespace NeobankProject.Migrations
                 name: "Trades");
 
             migrationBuilder.DropTable(
+                name: "Wallets");
+
+            migrationBuilder.DropTable(
                 name: "Stocks");
 
-            migrationBuilder.DropColumn(
-                name: "Type",
-                table: "Wallets");
+            migrationBuilder.DropTable(
+                name: "Currencies");
 
-            migrationBuilder.DropColumn(
-                name: "FirstName",
-                table: "Users");
-
-            migrationBuilder.DropColumn(
-                name: "LastName",
-                table: "Users");
-
-            migrationBuilder.DropColumn(
-                name: "Role",
-                table: "Users");
-
-            migrationBuilder.RenameColumn(
-                name: "UserID",
-                table: "Wallets",
-                newName: "UserId");
-
-            migrationBuilder.RenameColumn(
-                name: "Balance",
-                table: "Wallets",
-                newName: "Value");
-
-            migrationBuilder.RenameIndex(
-                name: "IX_Wallets_UserID",
-                table: "Wallets",
-                newName: "IX_Wallets_UserId");
-
-            migrationBuilder.RenameColumn(
-                name: "ID",
-                table: "Users",
-                newName: "Id");
-
-            migrationBuilder.AlterColumn<string>(
-                name: "Code",
-                table: "Currencies",
-                type: "nvarchar(max)",
-                nullable: false,
-                oldClrType: typeof(string),
-                oldType: "nvarchar(3)",
-                oldMaxLength: 3);
-
-            migrationBuilder.AddForeignKey(
-                name: "FK_Wallets_Users_UserId",
-                table: "Wallets",
-                column: "UserId",
-                principalTable: "Users",
-                principalColumn: "Id",
-                onDelete: ReferentialAction.Cascade);
+            migrationBuilder.DropTable(
+                name: "Users");
         }
     }
 }

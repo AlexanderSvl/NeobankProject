@@ -5,11 +5,11 @@ using NeobankProject.Models;
 
 namespace NeobankProject.DataAccess.Repositories
 {
-    public class MessagesRepository : IMessageRepository
+    public class MessageRepository : IMessageRepository
     {
         private static DatabaseContext context = new DatabaseContext();
 
-        public async Task AddMessage(MessagesModel message)
+        public async Task AddMessage(MessageModel message)
         {
             context.Messages.Add(message);
             await context.SaveChangesAsync();
@@ -24,25 +24,28 @@ namespace NeobankProject.DataAccess.Repositories
             {
                 context.Messages.Remove(messageForDelete);
                 await context.SaveChangesAsync();
+
                 return true;
             }
 
             return false;
         }
 
-        public async Task<IEnumerable<MessagesModel>> GetMessagesAsync()
+        public async Task<IEnumerable<MessageModel>> GetMessagesAsync()
         {
-            return await context.Messages.ToListAsync();
+            return await context.Messages
+                .ToListAsync();
         }
 
         public async Task<int> GetTotalMessagesCountAsync()
         {
-            return await context.Messages.CountAsync();
+            return await context.Messages
+                .CountAsync();
         }
 
-        public async Task<bool> EdiMessageAsync(Guid messageId, MessagesModel newMessage)
+        public async Task<bool> EdiMessageAsync(Guid messageId, MessageModel newMessage)
         {
-            MessagesModel messageToUpdate = await context.Messages
+            MessageModel messageToUpdate = await context.Messages
                 .FindAsync(messageId);
 
             if (messageToUpdate != null)
@@ -55,7 +58,7 @@ namespace NeobankProject.DataAccess.Repositories
             return false;
         }
 
-        public async Task<MessagesModel> GetMessageByIDAsync(Guid ID)
+        public async Task<MessageModel> GetMessageByIDAsync(Guid ID)
         {
             return await context.Messages
                 .FindAsync(ID);

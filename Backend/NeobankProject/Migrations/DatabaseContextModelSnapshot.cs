@@ -45,7 +45,7 @@ namespace NeobankProject.Migrations
                     b.ToTable("Currencies");
                 });
 
-            modelBuilder.Entity("NeobankProject.Models.MessagesModel", b =>
+            modelBuilder.Entity("NeobankProject.Models.MessageModel", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()

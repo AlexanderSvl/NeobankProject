@@ -20,7 +20,7 @@ namespace CarTradeWebsite.Context
         public DbSet<StockModel> Stocks { get; set; }
         public DbSet<CurrencyModel> Currencies { get; set; }
         public DbSet<WalletModel> Wallets { get; set; }
-        public DbSet<MessagesModel> Messages { get; set; }
+        public DbSet<MessageModel> Messages { get; set; }
 
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
