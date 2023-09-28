@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  pointer-events: none;
 }
 
 .App-logo {
@@ -11,6 +12,60 @@
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
   }
+}
+
+.head1 {
+  font-family: "Century Gothic", CenturyGothic, Geneva, AppleGothic, sans-serif;
+  font-weight: 100;
+  margin-top: 4rem;
+}
+
+.head2 { 
+  font-family: "Century Gothic", CenturyGothic, Geneva, AppleGothic, sans-serif;
+  font-weight: 100;
+  margin-top: 0rem;
+}
+
+.container {
+  position: relative;
+  width: 30%;
+}
+
+.image { 
+  border-radius: 2rem;
+  opacity: 1;
+  display: block;
+  width: 100%;
+  height: auto;
+  transition: 0.5s ease;
+  backface-visibility: hidden;
+}
+
+.middle {
+  transition: .5s ease;
+  opacity: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%)
+}
+
+.container:hover .image {
+  opacity: 0.3;
+}
+
+.container:hover .middle {
+  opacity: 1;
+}
+
+
+.text {
+  background-color: rgb(31, 60, 192);
+  border-radius: 1rem;
+  color: white;
+  font-size: 16px;
+  padding: 16px 32px;
 }
 
 .App-header {
