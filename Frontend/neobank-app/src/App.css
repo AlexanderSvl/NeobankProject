@@ -1,6 +1,5 @@
 .App {
   text-align: center;
-  pointer-events: none;
 }
 
 .App-logo {
@@ -61,7 +60,8 @@
 
 
 .text {
-  background-color: rgb(31, 60, 192);
+  background-color: #4d6088;
+  border: 0.2rem solid rgb(255, 255, 255);
   border-radius: 1rem;
   color: white;
   font-size: 16px;

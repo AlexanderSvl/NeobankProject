@@ -1,24 +1,22 @@
 import './App.css';
-import logo from '../src/images/logo.png';  
+import React from 'react'
 import '../src/index.css';
+import Register from '../src/components/Register'
+import {BrowserRouter as Router, Route, Link, Routes} from 'react-router-dom';
+import LandingPage from './components/LandingPage';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <div className="container">
-          <img className="image" src={logo} alt=""></img>
-
-          <div className="middle">
-            <div className="text">Join us!</div>
-          </div>
-        </div>
-
-        <h3 className="head1">Welcome to Neobank. </h3>
-        <h3 className="head2">Your best finance management system.</h3>
-      </header>
-    </div>
-  );
+    return (
+      <div>
+      <Router>
+          <Routes>
+            <Route path={'/register'} element={<Register />}></Route>
+            <Route path={'/'} element={<LandingPage />}></Route>
+          </Routes>
+      </Router>
+      </div>
+      
+    );  
 }
 
 export default App;
