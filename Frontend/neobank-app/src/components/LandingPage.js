@@ -2,6 +2,8 @@ import React from 'react';
 import logo from '../images/logo.png';
 import Register from '../components/Register'
 import {BrowserRouter as Router, Route, Link, Routes} from 'react-router-dom';
+import TypingAnimation from "react-typed";
+import "../styles/landing-page.css";
 
 function LandingPage() {
 
@@ -11,8 +13,22 @@ function LandingPage() {
         color: 'blue'
     };
 
+    var i = 0;
+    var txt = 'Lorem ipsum dummy text blabla.';
+    var speed = 50;
+
+    function typeWriter() {
+        if (i < txt.length) {
+            document
+                .getElementsByClassName("demo")
+                .innerHTML += txt.charAt(i);
+            i++;
+            setTimeout(typeWriter, speed);
+        }
+    }
+
     return (
-        <div className="App">
+        <div className="App" onLoad={typeWriter()}>
             <header className="App-header">
                 <div className="container">
                     <img className="image" src={logo} alt=""></img>
@@ -24,9 +40,8 @@ function LandingPage() {
                     </div>
                 </div>
 
-                <h3 className="head1">Welcome to Neobank.
-                </h3>
-                <h3 className="head2">Your best finance management system.</h3>
+                <h2 className="head1" >Welcome to Neobank. </h2>
+                <TypingAnimation className="head2" strings={["Your best finance management system."]} typeSpeed={50} startDelay={100} showCursor={true}/>
             </header>
 
             <Routes>
@@ -34,6 +49,7 @@ function LandingPage() {
             </Routes>
         </div>
     )
+
 }
 
 export default LandingPage;
