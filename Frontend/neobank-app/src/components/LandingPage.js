@@ -41,7 +41,7 @@ function LandingPage() {
                 </div>
 
                 <h2 className="head1" >Welcome to Neobank. </h2>
-                <TypingAnimation className="head2" strings={["Your best finance management system."]} typeSpeed={50} startDelay={100} showCursor={true}/>
+                <TypingAnimation className="head2" strings={["Your best finance management system."]} typeSpeed={50} startDelay={1000} showCursor={true}/>
             </header>
 
             <Routes>

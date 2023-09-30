@@ -2,14 +2,26 @@ import React, {useState} from "react";
 import '../styles/register.css'
 
 function Register() {
-    const [firstName,
-        setFirstName] = useState("");
-    const [lastName,
-        setLastName] = useState("");
-    const [email,
-        setEmail] = useState("");
-    const [password,
-        setPassword] = useState("");
+    const [inputFields,
+        setInputFields] = useState({
+        firstName: "",
+        lastName: "",
+        email: "",
+        password: "",
+        repeatPassword: "",
+    });
+
+    const handleChange = (e) => {
+        setInputFields({
+            ...inputFields,
+            [e.target.name]: e.target.value
+        });
+    };
+
+    const handleSubmit = (event) => {
+        event.preventDefault();
+        console.log(inputFields);
+    };
 
     return (
         <div className="main-container">
@@ -17,38 +29,46 @@ function Register() {
                 <h1 className="head">Sign up</h1>
             </div>
             <div className="form-container">
-                <form className="register-form">
+                <form className="register-form" onSubmit={handleSubmit}>
                     <input
                         className="register-form-input"
-                        value={firstName}
-                        onChange={e => setFirstName(e.target.value)}
+                        value={inputFields.firstName}
+                        onChange={handleChange}
                         placeholder="First name"
                         type="text"
                         name="firstName"
                         required/>
                     <input
                         className="register-form-input"
-                        value={lastName}
-                        onChange={e => setLastName(e.target.value)}
+                        value={inputFields.lastName}
+                        onChange={handleChange}
                         placeholder="Last name"
                         type="text"
                         name="lastName"
                         required/>
                     <input
                         className="register-form-input"
-                        value={email}
-                        onChange={e => setEmail(e.target.value)}
+                        value={inputFields.email}
+                        onChange={handleChange}
                         placeholder="Email address"
                         type="email"
                         name="email"
                         required/>
                     <input
                         className="register-form-input"
-                        value={password}
-                        onChange={e => setPassword(e.target.value)}
+                        value={inputFields.password}
+                        onChange={handleChange}
                         placeholder="Password"
                         type="password"
                         name="password"
+                        required/>
+                    <input
+                        className="register-form-input"
+                        value={inputFields.password}
+                        onChange={handleChange}
+                        placeholder="Repeat password"
+                        type="password"
+                        name="repeat-password"
                         required/>
 
                     <div className="button-container">
