@@ -38,7 +38,12 @@ body {
     text-align: center;
 }
 
+.head2{
+    color: white;
+}
+
 .head {
+    font-size: 40px;    
     color: white;
     font-family: 'Montserrat', sans-serif;
     letter-spacing: 0.3rem;
