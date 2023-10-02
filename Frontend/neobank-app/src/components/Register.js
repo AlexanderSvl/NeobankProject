@@ -98,7 +98,7 @@ function RegisterComponent() {
                         className="head2"
                         strings={["Already have an account ? Login here."]}
                         typeSpeed={50}
-                        startDelay={1000}
+                        startDelay={300}
                         showCursor={true}/>
                 </Link>
             </div>

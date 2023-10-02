@@ -10,7 +10,7 @@ function LoginComponent() {
         color: 'blue'
     };
 
-    let SubmitButtonMustBeDisabled = false;
+    // let SubmitButtonMustBeDisabled = false;
 
     const [inputFields,
         setInputFields] = useState({email: "", password: ""});
@@ -26,32 +26,32 @@ function LoginComponent() {
             !emailRegex.test(value)
                 ? setError({
                     ...errors,
-                    ["emailError"]: "Email is invalid.",
-                    ["isButtonDisabled"]: true
+                    emailError: "Email is invalid.",
+                    isButtonDisabled: true
                 })
                 : setError({
                     ...errors,
-                    ["emailError"]: ""
+                    emailError: "",
+                    isButtonDisabled: false // propusnata huinq
                 })
         } else if (name == "password") {
             !passwordRegex.test(value)
                 ? setError({
                     ...errors,
-                    ["passwordError"]: "Password is invalid: Minimum 8 characters with at least one uppercase letter, on" +
+                    passwordError: "Password is invalid: Minimum 8 characters with at least one uppercase letter, on" +
                             "e lowercase letter, one digit and one special character.",
-                    ["isButtonDisabled"]: true
+                    isButtonDisabled: true
                 })
                 : setError({
                     ...errors,
-                    ["passwordError"]: ""
+                    passwordError: "",
+                    isButtonDisabled: false // propusnata huinq
                 })
         };
 
-        if(errors.passwordError == "" && errors.emailError == ""){
+        if (errors.passwordError == "" && errors.emailError == "") {
             errors.isButtonDisabled = false;
         }
-
-        console.log(errors);
     };
 
     const handleChange = (e) => {
@@ -65,7 +65,6 @@ function LoginComponent() {
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        console.log("ld")
     };
 
     return (
@@ -77,7 +76,7 @@ function LoginComponent() {
                         className="head2"
                         strings={["Don't have an account ? Sign up here."]}
                         typeSpeed={50}
-                        startDelay={1000}
+                        startDelay={300}
                         showCursor={true}/>
                 </Link>
             </div>
@@ -138,9 +137,10 @@ function LoginComponent() {
                     }}>{errors.passwordError}</div>
 
                     <div className="button-container">
-                        <button
-                            type="submit"
-                            className="submit-button">Submit</button>
+                        {errors.isButtonDisabled
+                            ? <button type="button" className="submit-button">Submit</button>
+                            : <button type="submit" className="submit-button">Submit</button>
+                        }
                     </div>
                 </form>
             </div>
