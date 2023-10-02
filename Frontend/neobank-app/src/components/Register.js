@@ -1,9 +1,15 @@
 import React, {useState} from "react";
+import {BrowserRouter as Router, Route, Link, Routes} from 'react-router-dom';
 import '../styles/register.css'
 import TypingAnimation from "react-typed";
 
+function RegisterComponent() {
+    const linkStyle = {
+        margin: "1rem",
+        textDecoration: "none",
+        color: 'blue'
+    };
 
-function Register() {
     const [inputFields,
         setInputFields] = useState({firstName: "", lastName: "", email: "", password: "", repeatPassword: ""});
 
@@ -14,9 +20,6 @@ function Register() {
         const nameRegex = /^[A-Za-z]{2,}$/;
         const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
         const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*()_+{}[\]:;<>,.?/~]).{8,}$/;
-
-        console.log(value);
-        console.log("pass is: " + inputFields.password);
 
         if (name == "firstName") {
             !nameRegex.test(value)
@@ -42,7 +45,7 @@ function Register() {
             !emailRegex.test(value)
                 ? setError({
                     ...errors,
-                    ["emailError"]: "Email is invalid"
+                    ["emailError"]: "Email is invalid."
                 })
                 : setError({
                     ...errors,
@@ -90,12 +93,19 @@ function Register() {
         <div className="main-container">
             <div className="head-container">
                 <h1 className="head">Sign up</h1>
-                <TypingAnimation className="head2" strings={["Already have an account ?  Login here."]} typeSpeed={50} startDelay={1000} showCursor={true}/>
+                <Link to="/login" style={linkStyle}>
+                    <TypingAnimation
+                        className="head2"
+                        strings={["Already have an account ? Login here."]}
+                        typeSpeed={50}
+                        startDelay={1000}
+                        showCursor={true}/>
+                </Link>
             </div>
             <div className="form-container">
-                <form className="register-form" onSubmit={handleSubmit}>
+                <form className="form" onSubmit={handleSubmit}>
                     <input
-                        className="register-form-input"
+                        className="form-input"
                         value={inputFields.firstName}
                         onChange={handleChange}
                         placeholder="First name"
@@ -122,7 +132,7 @@ function Register() {
                     }}>{errors.firstNameError}</div>
 
                     <input
-                        className="register-form-input"
+                        className="form-input"
                         value={inputFields.lastName}
                         onChange={handleChange}
                         placeholder="Last name"
@@ -149,7 +159,7 @@ function Register() {
                     }}>{errors.lastNameError}</div>
 
                     <input
-                        className="register-form-input"
+                        className="form-input"
                         value={inputFields.email}
                         onChange={handleChange}
                         placeholder="Email address"
@@ -176,7 +186,7 @@ function Register() {
                     }}>{errors.emailError}</div>
 
                     <input
-                        className="register-form-input"
+                        className="form-input"
                         value={inputFields.password}
                         onChange={handleChange}
                         placeholder="Password"
@@ -203,7 +213,7 @@ function Register() {
                     }}>{errors.passwordError}</div>
 
                     <input
-                        className="register-form-input"
+                        className="form-input"
                         value={inputFields.repeatPassword}
                         onChange={handleChange}
                         placeholder="Repeat password"
@@ -238,4 +248,4 @@ function Register() {
     )
 }
 
-export default Register;
+export default RegisterComponent;

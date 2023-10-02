@@ -5,7 +5,7 @@ import {BrowserRouter as Router, Route, Link, Routes} from 'react-router-dom';
 import TypingAnimation from "react-typed";
 import "../styles/landing-page.css";
 
-function LandingPage() {
+function LandingPageComponent() {
 
     const linkStyle = {
         margin: "1rem",
@@ -52,4 +52,4 @@ function LandingPage() {
 
 }
 
-export default LandingPage;
+export default LandingPageComponent;

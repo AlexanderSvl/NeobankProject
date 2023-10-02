@@ -11,7 +11,7 @@ body {
     height: 25rem;
 }
 
-.register-form {
+.form {
     width: 100%;
     height: 100%;
 }
@@ -21,7 +21,7 @@ body {
     text-align: center;
 }
 
-.register-form-input {
+.form-input {
     display: flex;
     margin: auto;
     width: 40%;
@@ -65,8 +65,7 @@ body {
 }
 
 .submit-button:hover {
-    width: 20%;
-    height: 2.6rem;
+    opacity: 75%;
 }
 
 .submit-button:disabled {
