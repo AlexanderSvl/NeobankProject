@@ -1,0 +1,33 @@
+.menu {
+    height: 100vh;
+    width: 13%;
+    margin: 0;
+    background-color: rgb(54, 69, 82);
+}
+
+.menu-container {
+    padding-top: 3vh;
+}
+
+.logo{
+    border-radius: 2vh;
+    opacity: 1;
+    display: block;
+    width: 75%;
+    margin: auto;
+    height: auto;
+}
+
+.menuItem{
+    margin: 0;
+    color: beige;
+    text-align: center;
+    margin-bottom: 1rem;
+    font-size: 3vh;
+}
+
+.menuItem:hover {
+    cursor: pointer;
+    background-color: rgb(73, 85, 87);
+    transition: background-color 0.5s;
+}
