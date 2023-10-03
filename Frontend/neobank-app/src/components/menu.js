@@ -20,7 +20,6 @@ function MenuComponent() {
                     style={{
                     marginTop: "2vh"
                 }}>Transactions</p>
-
                 <p
                     className="menuItem"
                     style={{
@@ -36,7 +35,6 @@ function MenuComponent() {
                     style={{
                     marginTop: "2vh"
                 }}>Crypto</p>
-
                 <p
                     className="menuItem"
                     style={{
@@ -47,7 +45,6 @@ function MenuComponent() {
                     style={{
                     marginTop: "2vh"
                 }}>Reports</p>
-
                 <p
                     className="menuItem"
                     style={{
