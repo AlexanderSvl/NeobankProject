@@ -3,17 +3,18 @@
     width: 13%;
     margin: 0;
     background-color: rgb(54, 69, 82);
+    display: inline-block;
 }
 
 .menu-container {
     padding-top: 3vh;
 }
 
-.logo{
+.logo {
     border-radius: 2vh;
     opacity: 1;
     display: block;
-    width: 75%;
+    width: 65%;
     margin: auto;
     height: auto;
 }

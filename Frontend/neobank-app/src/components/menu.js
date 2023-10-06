@@ -2,14 +2,16 @@ import React, {useState} from "react";
 import {BrowserRouter as Router, Route, Link, Routes} from 'react-router-dom';
 import '../styles/menu.css';
 import logo from '../images/logo.png';
+import walletImage from '../images/wallet-2.png';
 import logoNoText from '../images/neobank-logo-notext.png';
 
 function MenuComponent() {
+    
+
     return (
         <div className="menu">
             <div className="menu-container">
                 <img className="logo" src={logoNoText}></img>
-
                 <p
                     className="menuItem"
                     style={{
@@ -48,7 +50,7 @@ function MenuComponent() {
                 <p
                     className="menuItem"
                     style={{
-                    marginTop: "10vh"
+                    marginTop: "12vh"
                 }}>Settings</p>
             </div>
         </div>
