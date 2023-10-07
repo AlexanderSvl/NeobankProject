@@ -7,7 +7,6 @@ import wallet from '../images/wallet-2.png'
 function WalletComponent(){
     return (
         <div className="wallet">
-            
         </div>
     )
 }

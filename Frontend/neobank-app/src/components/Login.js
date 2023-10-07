@@ -68,7 +68,7 @@ function LoginComponent() {
     };
 
     return (
-        <div className="main-container">
+        <div>
             <div className="head-container">
                 <h1 className="head">Log in</h1>
                 <Link to="/register" style={linkStyle}>

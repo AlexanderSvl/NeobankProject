@@ -11,11 +11,10 @@ function MenuComponent() {
     return (
         <div className="menu">
             <div className="menu-container">
-                <img className="logo" src={logoNoText}></img>
                 <p
                     className="menuItem"
                     style={{
-                    marginTop: "6vh"
+                    marginTop: "7vh"
                 }}>My Wallet</p>
                 <p
                     className="menuItem"
@@ -50,7 +49,7 @@ function MenuComponent() {
                 <p
                     className="menuItem"
                     style={{
-                    marginTop: "12vh"
+                    marginTop: "28vh"
                 }}>Settings</p>
             </div>
         </div>

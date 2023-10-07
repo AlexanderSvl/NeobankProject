@@ -1,7 +1,6 @@
 .wallet {
-    display: inline-block;
+    height: 100vh;
 }
 
 .wallet-image{
-    margin-left: 4rem;
 }

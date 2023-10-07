@@ -90,7 +90,7 @@ function RegisterComponent() {
     };
 
     return (
-        <div className="main-container">
+        <div>
             <div className="head-container">
                 <h1 className="head">Sign up</h1>
                 <Link to="/login" style={linkStyle}>
