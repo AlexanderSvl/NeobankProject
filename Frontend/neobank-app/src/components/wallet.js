@@ -6,7 +6,7 @@ import wallet from '../images/wallet-2.png'
 import {useSpring, animated} from "react-spring";
 
 function WalletComponent() {
-    let balance = 674.50;
+    let balance = 237.34;
 
     return (
         <div className="wallet">

@@ -1,4 +1,7 @@
+using CarTradeWebsite.Context;
+using EntityGraphQL.AspNet;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using NeobankProject.DataAccess.Repositories;
 using NeobankProject.DataAccess.Repositories.Interfaces;
@@ -8,6 +11,7 @@ using System.Text;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
+builder.Services.AddScoped<DbContext, DatabaseContext>();
 builder.Services.AddScoped<IUserRepository, UserRepository>();
 builder.Services.AddScoped<IStockRepository, StockRepository>();
 builder.Services.AddScoped<IOrderRepository, OrderRepository>();
@@ -34,13 +38,14 @@ builder.Services.AddAuthentication(opt => {
         };
     });
 
+builder.Services.AddDbContext<DatabaseContext>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnectionString")));
 builder.Services.AddControllers();
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+builder.Services.AddGraphQLSchema<DatabaseContext>();
 
 var app = builder.Build();
-
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
@@ -51,6 +56,13 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 app.UseAuthorization();
+app.UseRouting();
+
+app.UseEndpoints(routeBuilder =>
+{
+    routeBuilder.MapControllers();
+    routeBuilder.MapGraphQL<DatabaseContext>(); // default url: /graphql
+});
 app.MapControllers();
 
 app.Run();

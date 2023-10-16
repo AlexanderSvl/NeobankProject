@@ -4,6 +4,8 @@ using NeobankProject.Models;
 
 namespace NeobankProject.Controllers
 {
+    [ApiController]
+    [Route("api/users")]
     public class UserController : ControllerBase
     {
         private IUserRepository _userRepository { get; set; }
@@ -13,7 +15,7 @@ namespace NeobankProject.Controllers
             this._userRepository = userRepository;
         }
 
-        [HttpGet("users/count")]
+        [HttpGet("count")]
         public async Task<ActionResult<int>> GetUserCount()
         {
             int count = await this._userRepository.GetTotalUsersCountAsync();
@@ -21,7 +23,7 @@ namespace NeobankProject.Controllers
             return Ok(count);
         }
 
-        [HttpGet("users/get")]
+        [HttpGet("get")]
         public async Task<ActionResult<IEnumerable<UserModel>>> GetUsers()
         {
             IEnumerable<UserModel> users = await this._userRepository.GetUsersAsync();
@@ -34,7 +36,7 @@ namespace NeobankProject.Controllers
             return Ok(users);
         }
 
-        [HttpGet("users/get/{ID}")]
+        [HttpGet("get/{ID}")]
         public async Task<ActionResult<UserModel>> GetUserById(Guid ID)
         {
             UserModel user = await this._userRepository.GetUserByIDAsync(ID);
@@ -47,7 +49,7 @@ namespace NeobankProject.Controllers
             return Ok(user);
         }
 
-        [HttpPost("users/new")]
+        [HttpPost("new")]
         public async Task<ActionResult<UserModel>> CreateUser([FromBody] UserModel user)
         {
             UserModel createdUser = await this._userRepository.CreateUserAsync(user);
@@ -60,7 +62,7 @@ namespace NeobankProject.Controllers
             return Ok(createdUser);
         }
 
-        [HttpPut("users/{userId}/edit")]
+        [HttpPut("{userId}/edit")]
         public async Task<ActionResult<UserModel>> EditUser(Guid userId, UserModel user)
         {
             UserModel updatedUser = await this._userRepository.EditUserAsync(userId, user);
@@ -73,7 +75,7 @@ namespace NeobankProject.Controllers
             return Ok(updatedUser);
         }
 
-        [HttpDelete("users/{userId}/delete")]
+        [HttpDelete("{userId}/delete")]
         public async Task<ActionResult<bool>> DeleteUser(Guid userId)
         {
             bool isDeleted = await this._userRepository.DeleteUserAsync(userId);

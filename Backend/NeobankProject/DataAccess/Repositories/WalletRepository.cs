@@ -9,6 +9,12 @@ namespace NeobankProject.DataAccess.Repositories
     {
         private static DatabaseContext context = new DatabaseContext();
 
+        public async Task<WalletModel> GetWalletByIDAsync(Guid ID)
+        {
+            return await context.Wallets
+                .FindAsync(ID);
+        }
+
         public async Task<WalletModel> AddBalanceToWalletAsync(Guid walletId, decimal balance)
         {
             WalletModel walletToAddMoneyTo = await context.Wallets
