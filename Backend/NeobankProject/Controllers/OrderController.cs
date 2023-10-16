@@ -4,6 +4,8 @@ using NeobankProject.Models;
 
 namespace NeobankProject.Controllers
 {
+    [ApiController]
+    [Route("api/orders")]
     public class OrderController : ControllerBase
     {
         private IOrderRepository _orderRepository { get; set; }
@@ -13,7 +15,7 @@ namespace NeobankProject.Controllers
             this._orderRepository = orderRepository;
         }
 
-        [HttpGet("orders/get/{ID}")]
+        [HttpGet("get/{ID}")]
         public async Task<ActionResult<IEnumerable<OrderModel>>> GetOrderById(Guid ID)
         {
             OrderModel order = await this._orderRepository.GetOrderByIDAsync(ID);
@@ -26,7 +28,7 @@ namespace NeobankProject.Controllers
             return Ok(order);
         }
 
-        [HttpGet("orders/get/userId={ID}")]
+        [HttpGet("get/userId={ID}")]
         public async Task<ActionResult<IEnumerable<OrderModel>>> GetAllOrdersFromUser(Guid ID)
         {
             IEnumerable<OrderModel> order = await this._orderRepository.GetAllOrdersFromUserAsync(ID);
@@ -39,7 +41,7 @@ namespace NeobankProject.Controllers
             return Ok(order);
         }
 
-        [HttpPost("orders/new")]
+        [HttpPost("new")]
         public async Task<ActionResult<OrderModel>> CreateOrder([FromBody] OrderModel order)
         {
             OrderModel createdOrder = await this._orderRepository.CreateOrderAsync(order);
@@ -52,7 +54,7 @@ namespace NeobankProject.Controllers
             return Ok(createdOrder);
         }
 
-        [HttpPost("orders/{ID}/execute")]
+        [HttpPost("{ID}/execute")]
         public async Task<ActionResult<OrderModel>> ExecuteOrder(Guid ID, [FromBody] int quantity)
         {
             bool isOrderCreated = await this._orderRepository.ExecuteOrderAsync(ID, quantity);

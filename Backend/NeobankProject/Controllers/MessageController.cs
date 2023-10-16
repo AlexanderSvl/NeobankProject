@@ -5,6 +5,8 @@ using NeobankProject.Models;
 
 namespace NeobankProject.Controllers
 {
+    [ApiController]
+    [Route("api/messages")]
     public class MessageController : ControllerBase
     {
         private IMessageRepository _messageRepository { get; set; }
@@ -14,13 +16,13 @@ namespace NeobankProject.Controllers
             this._messageRepository = messageRepository;
         }
 
-        [HttpGet("messages/all")]
+        [HttpGet("all")]
         public async Task<IEnumerable<MessageModel>> GetMessagesAsync()
         {
             return await _messageRepository.GetMessagesAsync();
         }
 
-        [HttpGet("messages/get/{Id}")]
+        [HttpGet("get/{Id}")]
         public async Task<ActionResult<MessageModel>> GetMessageById(Guid Id)
         {
             MessageModel targetMessage = await _messageRepository.GetMessageByIDAsync(Id);
@@ -33,7 +35,7 @@ namespace NeobankProject.Controllers
             return NotFound();
         }
 
-        [HttpPost("messages/new")]
+        [HttpPost("new")]
         public async Task<ActionResult<MessageModel>> AddMessage([FromBody] MessageModel newMessage)
         {
             await _messageRepository.AddMessage(newMessage);

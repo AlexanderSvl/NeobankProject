@@ -4,6 +4,8 @@ using NeobankProject.Models;
 
 namespace NeobankProject.Controllers
 {
+    [ApiController]
+    [Route("api/trades")]
     public class TradeController : ControllerBase
     {
         private ITradeRepository _tradeRepository;
@@ -13,7 +15,7 @@ namespace NeobankProject.Controllers
             this._tradeRepository = tradeRepository;
         }
 
-        [HttpPost("trades/add")]
+        [HttpPost("add")]
         public async Task<ActionResult<TradeModel>> CreateTrade([FromBody] TradeModel tradeModel)
         {
             TradeModel createdTrade = await this._tradeRepository.CreateTradeAsync(tradeModel);
@@ -26,7 +28,7 @@ namespace NeobankProject.Controllers
             return Ok(createdTrade);
         }
 
-        [HttpGet("trades/all")]
+        [HttpGet("all")]
         public async Task<ActionResult<IEnumerable<TradeModel>>> GetAllTrades()
         {
             IEnumerable<TradeModel> trades = await this._tradeRepository.GetAllTradesAsync();
@@ -39,7 +41,7 @@ namespace NeobankProject.Controllers
             return Ok(trades);
         }
 
-        [HttpGet("trades/{ID}/get")]
+        [HttpGet("{ID}/get")]
         public async Task<ActionResult<IEnumerable<TradeModel>>> GetStockById(Guid ID)
         {
             TradeModel trade = await this._tradeRepository.GetTradeByIdAsync(ID);
@@ -52,7 +54,7 @@ namespace NeobankProject.Controllers
             return Ok(trade);
         }
 
-        [HttpGet("trades/userId={ID}/get")]
+        [HttpGet("userId={ID}/get")]
         public async Task<ActionResult<IEnumerable<TradeModel>>> GetAllOrdersFromUser(Guid ID)
         {
             IEnumerable<TradeModel> trades = await this._tradeRepository.GetAllTradesFromUserAsync(ID);

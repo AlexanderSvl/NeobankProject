@@ -4,6 +4,8 @@ using NeobankProject.Models;
 
 namespace NeobankProject.Controllers
 {
+    [ApiController]
+    [Route("api/stocks")]
     public class StockController : ControllerBase
     {
         private IStockRepository _stockRepository { get; set; }
@@ -13,7 +15,7 @@ namespace NeobankProject.Controllers
             this._stockRepository = stockRepository;
         }
 
-        [HttpGet("stocks/{ID}/get")]
+        [HttpGet("{ID}/get")]
         public async Task<ActionResult<StockModel>> GetStockById(Guid ID)
         {
             StockModel order = await this._stockRepository.GetStockByIdAsync(ID);
@@ -26,7 +28,7 @@ namespace NeobankProject.Controllers
             return Ok(order);
         }
 
-        [HttpGet("stocks/get")]
+        [HttpGet("get")]
         public async Task<ActionResult<IEnumerable<StockModel>>> GetAllStocks()
         {
             IEnumerable<StockModel> order = await this._stockRepository.GetAllStocksAsync();
@@ -39,7 +41,7 @@ namespace NeobankProject.Controllers
             return Ok(order);
         }
 
-        [HttpPost("stocks/add")]
+        [HttpPost("add")]
         public async Task<ActionResult<StockModel>> AddStock([FromBody] StockModel order)
         {
             StockModel createdOrder = await this._stockRepository.AddStockAsync(order);
@@ -52,7 +54,7 @@ namespace NeobankProject.Controllers
             return Ok(createdOrder);
         }
 
-        [HttpGet("stocks/{ID}/delete")]
+        [HttpGet("{ID}/delete")]
         public async Task<ActionResult<IEnumerable<StockModel>>> DeleteStock(Guid ID)
         {
             bool isDeleted = await this._stockRepository.DeleteStockAsync(ID);
@@ -65,7 +67,7 @@ namespace NeobankProject.Controllers
             return Ok();
         }
 
-        [HttpPost("stocks/{ID}/update")]
+        [HttpPost("{ID}/update")]
         public async Task<ActionResult<StockModel>> UpdateStock(Guid ID, [FromBody] StockModel order)
         {
             StockModel updatedOrder = await this._stockRepository.UpdateStockAsync(ID, order);
