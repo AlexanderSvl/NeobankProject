@@ -1,6 +1,6 @@
 import React, {useState} from "react";
 import {BrowserRouter as Router, Route, Link, Routes} from 'react-router-dom';
-import '../styles/register.css'
+import './registerPage.css'
 import TypingAnimation from "react-typed";
 
 function RegisterComponent() {

@@ -2,10 +2,10 @@ import './App.css';
 import React from 'react'
 import '../src/index.css';
 import {BrowserRouter as Router, Route, Link, Routes} from 'react-router-dom';
-import LandingPageComponent from './components/LandingPage';
-import RegisterComponent from '../src/components/Register';
-import LoginComponent from './components/Login';
-import HomePageComponent from './components/homePage';
+import LandingPageComponent from './components/LandingPageComponent/landingPage';
+import RegisterComponent from './components/RegisterPageComponent/registerPage';
+import LoginComponent from './components/LoginPageComponent/loginPage';
+import HomePageComponent from './components/HomePageComponent/homePage';
 
 function App() {
     return (

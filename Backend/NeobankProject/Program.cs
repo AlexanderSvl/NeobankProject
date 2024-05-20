@@ -7,6 +7,7 @@ using NeobankProject.DataAccess.Repositories;
 using NeobankProject.DataAccess.Repositories.Interfaces;
 using NeobankProject.Repositories;
 using System.Text;
+using Microsoft.Extensions.DependencyInjection;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -45,6 +46,17 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddGraphQLSchema<DatabaseContext>();
 
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("AllowReactApp",
+        builder =>
+        {
+            builder.WithOrigins("http://localhost:3000") // Update with your React app's URL
+                   .AllowAnyMethod()
+                   .AllowAnyHeader();
+        });
+});
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -57,6 +69,8 @@ if (app.Environment.IsDevelopment())
 app.UseHttpsRedirection();
 app.UseAuthorization();
 app.UseRouting();
+
+app.UseCors("AllowReactApp"); // Apply CORS policy
 
 app.UseEndpoints(routeBuilder =>
 {

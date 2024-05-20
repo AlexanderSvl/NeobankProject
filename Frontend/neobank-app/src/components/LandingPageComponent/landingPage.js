@@ -1,9 +1,9 @@
 import React from 'react';
-import logo from '../images/logo.png';
-import Register from '../components/Register'
+import logo from '../../images/logo.png';
+import Register from '../RegisterPageComponent/registerPage'
 import {BrowserRouter as Router, Route, Link, Routes} from 'react-router-dom';
 import TypingAnimation from "react-typed";
-import "../styles/landing-page.css";
+import "./landingPage.css";
 
 function LandingPageComponent() {
 

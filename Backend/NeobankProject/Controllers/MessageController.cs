@@ -43,7 +43,7 @@ namespace NeobankProject.Controllers
 
         }
 
-        [HttpPut("messages/edit")]
+        [HttpPut("edit/{Id}")]
         public async Task<ActionResult<MessageModel>> EditMessage(Guid Id, MessageModel newMessage)
         {
             bool succesfullyEditted = await _messageRepository.EdiMessageAsync(Id, newMessage);
@@ -56,7 +56,7 @@ namespace NeobankProject.Controllers
             return Ok();
         }
 
-        [HttpDelete("messages/delete")]
+        [HttpDelete("delete/{Id}")]
         public async Task<ActionResult<MessageModel>> DeleteMessage(Guid Id)
         {
             bool succesfullyEditted = await _messageRepository.DeleteMessageAsync(Id);
@@ -68,9 +68,5 @@ namespace NeobankProject.Controllers
 
             return Ok();
         }
-
-
-
-
     }
 }

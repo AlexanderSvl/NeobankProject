@@ -1,16 +1,18 @@
 import React, {useState} from "react";
 import {BrowserRouter as Router, Route, Link, Routes} from 'react-router-dom';
-import '../styles/register.css'
+import './loginPage.css'
 import TypingAnimation from "react-typed";
+import { login } from '../../services/authenticationService';
+import { useNavigate } from 'react-router-dom';
 
 function LoginComponent() {
+    const navigate = useNavigate();
+
     const linkStyle = {
         margin: "1rem",
         textDecoration: "none",
         color: 'blue'
     };
-
-    // let SubmitButtonMustBeDisabled = false;
 
     const [inputFields,
         setInputFields] = useState({email: "", password: ""});
@@ -63,8 +65,9 @@ function LoginComponent() {
         validate(e.target.name, e.target.value);
     };
 
-    const handleSubmit = (event) => {
+    const handleSubmit = async (event) => {
         event.preventDefault();
+        const response = await login(inputFields.email, inputFields.password, navigate, setError);
     };
 
     return (
