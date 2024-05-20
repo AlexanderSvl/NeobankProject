@@ -64,7 +64,7 @@ namespace NeobankProject.Controllers
             return CreatedAtAction(nameof(GetWalletById), new { id = createdWallet.Id }, createdWallet);
         }
 
-        [HttpGet("{id}")]
+        [HttpGet("get/{id}")]
         public async Task<ActionResult<WalletModel>> GetWalletById(Guid id)
         {
             var wallet = await _walletRepository.GetWalletByIDAsync(id);

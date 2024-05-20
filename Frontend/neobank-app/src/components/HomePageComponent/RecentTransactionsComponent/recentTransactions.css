@@ -1,0 +1,100 @@
+
+
+
+
+.recent-transactions-content {
+    background-color: rgb(73, 85, 87);
+    border-radius: 1rem;
+    border: 3px solid rgba(255, 255, 255, 0.199);
+    margin: 1vw;
+    height: 90%;
+    width: 95.5%;
+    padding: 1rem;
+    color: whitesmoke;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.recent-transactions-content h2 {
+    margin-bottom: 1rem;
+}
+
+.transaction-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.transaction-item {
+    border-radius: 0.5rem;
+    display: flex;
+    justify-content: space-between;
+    padding: 0.5rem;
+    margin-bottom: 0.5rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.transaction-item span {
+    flex: 1;
+    text-align: center;
+}
+
+.transaction-item .transaction-type {
+    flex: 2;
+}
+
+.transaction-item .transaction-amount {
+    flex: 2;
+}
+
+.transaction-item .transaction-date {
+    flex: 2;
+}
+
+.transaction-item .transaction-status {
+    flex: 1;
+    text-transform: capitalize;
+}
+
+.transaction-item.pending {
+    background-color: rgba(255, 255, 0, 0.1);
+}
+
+.transaction-item.completed {
+    background-color: rgba(0, 255, 0, 0.1);
+}
+
+.transaction-item.failed {
+    background-color: rgba(255, 0, 0, 0.1);
+}
+
+@media (max-width: 768px) {
+    .transaction-item {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .transaction-item span {
+        text-align: left;
+        margin-bottom: 0.5rem;
+    }
+
+    .transaction-item .transaction-status {
+        align-self: flex-end;
+    }
+}
+
+.see-all-button {
+    background-color: rgba(42, 128, 150, 0.8);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    margin-top: 1rem;
+    align-self: center;
+    text-align: center;
+}
+
+.see-all-button:hover {
+    background-color: rgba(42, 128, 150, 1);
+}
