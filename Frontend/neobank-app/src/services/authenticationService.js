@@ -1,9 +1,10 @@
 import axios from 'axios';
 import { jwtDecode } from 'jwt-decode';
+import { environment } from '../constants/environment'
 
 export const login = async (email, password, navigate, setError) => {
   try {
-    const response = await fetch('https://localhost:5000/login', {
+    const response = await fetch(`${environment.baseUrl}/login`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -12,7 +13,7 @@ export const login = async (email, password, navigate, setError) => {
     });
 
     const data = await response.json();
-    
+
     const token = data.token;
     localStorage.setItem('token', JSON.stringify(token));
     

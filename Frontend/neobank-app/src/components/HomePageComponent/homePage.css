@@ -1,51 +1,113 @@
-.main-container {
-    display: flex;
-    height: 100vh;
-  }
-  
   .menu {
-    width: 8vw;
-    background-color: rgb(73, 85, 87);
-    color: white;
-    padding: 20px;
-  }
-  
-  .menu-header {
-    font-size: 1.5rem;
-    font-weight: bold;
-    margin-bottom: 2rem;
+      width: 8vw;
+      background-color: rgb(73, 85, 87);
+      color: white;
+      padding: 20px;
   }
 
-  #settings{
-    position: fixed;
-    bottom: 1rem;
-    width: 6vw;
+  .menu-header {
+      font-size: 1.5rem;
+      font-weight: bold;
+      margin-bottom: 2rem;
   }
-  
+
+  #settings {
+      position: fixed;
+      bottom: 1rem;
+      width: 6vw;
+  }
+
   .menu-list {
-    list-style: none;
-    padding: 0;
-    margin: 0;
+      list-style: none;
+      padding: 0;
+      margin: 0;
   }
-  
+
   .menu-item {
-    margin-bottom: 1rem;
-    cursor: pointer;
-    font-size: 1.2rem;
-    padding: 0 1rem 0 1rem;
+      margin-bottom: 1rem;
+      cursor: pointer;
+      font-size: 1.2rem;
+      padding: 0 1rem 0 1rem;
   }
-  
+
   .menu-item:hover {
-    background-color: rgba(255, 255, 255, 0.1);
-    border-radius: 5px;
-    transition: background-color 0.3s ease;
+      background-color: rgba(255, 255, 255, 0.1);
+      border-radius: 5px;
+      transition: background-color 0.3s ease;
   }
-  
+
   .content {
-    flex: 1;
-    padding: 20px;
+      flex: 1;
+      padding: 2rem;
   }
-  
+
   h1 {
-    color: rgb(42, 128, 150);
+    /*color: rgb(42, 128, 150);*/
   }
+
+  .main-container {
+      display: flex;
+      height: 100vh;
+      width: 100%;
+  }
+
+  .default-content {
+      display: flex;
+      flex-wrap: wrap;
+  }
+
+  .total-balance, .monthly-spendings {
+      flex: 1 1 50%;
+      height: 47vh;
+  }
+
+  .recent-transactions {
+      flex: 100%;
+      height: 47vh;
+  }
+
+  .total-balance {
+      text-align: center;
+  }
+
+  .monthly-spendings {
+      background-color: rgb(200, 255, 200);
+  }
+
+  .recent-transactions {
+      background-color: rgb(200, 200, 255);
+  }
+
+  #balance-animation-h1 {
+    font-size: 3rem;
+    color: whitesmoke;
+  }
+
+  #total-balance-h1 {
+      margin-top: 3rem;
+    font-size: 2rem;
+    color: whitesmoke;
+  }
+
+  .total-balance-content{
+      border-radius: 1rem;
+      border: 3px solid rgba(255, 255, 255, 0.199);
+      margin: 1vw;
+      height: 90%;
+      width: 95%;
+  }
+
+  .coins-image {
+    width: 10rem;
+    opacity: 0; /* Start with 0 opacity */
+    animation: fadeIn 2s ease-in forwards; /* Apply the fadeIn animation */
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0; /* Start with 0 opacity */
+    }
+    to {
+        opacity: 1; /* End with full opacity */
+    }
+}
