@@ -1,10 +1,11 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace NeobankProject.Models
 {
     public class UserModel
     {
-        [Key] 
+        [Key]
         public Guid ID { get; set; }
 
         [Required]

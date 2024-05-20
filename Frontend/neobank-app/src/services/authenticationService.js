@@ -29,10 +29,34 @@ export const login = async (email, password, navigate, setError) => {
   }
 };
 
-// export const getCurrentUser = () => {
-//   const user = localStorage.getItem('user');
-//   return user ? JSON.parse(user) : null;
-// };
+export const register = async (registerData, navigate, setError) => {
+  try {
+    const response = await fetch(`${environment.baseUrl}/api/users/new`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(registerData),
+    });
+
+    const data = await response.json();
+
+    localStorage.setItem('userId', data.id);
+    localStorage.setItem('user', data);
+
+    login(registerData.email, registerData.password, navigate, setError);
+    return true;
+  } catch (error) {
+    setError('Failed to register. Please check your credentials and try again.');
+    console.error(error);
+    return false;
+  }
+};
+
+export const getCurrentUser = () => {
+  const user = localStorage.getItem('user');
+  return user ? JSON.parse(user) : null;
+};
 
 export const signOut = () => {
   localStorage.removeItem('token');

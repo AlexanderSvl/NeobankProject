@@ -2,8 +2,12 @@ import React, {useState} from "react";
 import {BrowserRouter as Router, Route, Link, Routes} from 'react-router-dom';
 import './registerPage.css'
 import TypingAnimation from "react-typed";
+import { register } from "../../services/authenticationService";
+import { useNavigate } from 'react-router-dom';
 
 function RegisterComponent() {
+    const navigate = useNavigate();
+
     const linkStyle = {
         margin: "1rem",
         textDecoration: "none",
@@ -11,10 +15,10 @@ function RegisterComponent() {
     };
 
     const [inputFields,
-        setInputFields] = useState({firstName: "", lastName: "", email: "", password: "", repeatPassword: ""});
+        setInputFields] = useState({userName: "", firstName: "", lastName: "", email: "", password: "", repeatPassword: ""});
 
     const [errors,
-        setError] = useState({firstNameError: "", lastNameError: "", emailError: "", passwordError: "", repeatPasswordError: ""});
+        setError] = useState({userNameError: "", firstNameError: "", lastNameError: "", emailError: "", passwordError: "", repeatPasswordError: ""});
 
     function validate(name, value) {
         const nameRegex = /^[A-Za-z]{2,}$/;
@@ -84,9 +88,19 @@ function RegisterComponent() {
         validate(e.target.name, e.target.value);
     };
 
-    const handleSubmit = (event) => {
+    const handleSubmit = async (event) => {
         event.preventDefault();
-        console.log(inputFields);
+
+        const formData = {
+            userName: inputFields.userName,
+            firstName: inputFields.firstName,
+            lastName: inputFields.lastName,
+            role: "admin",
+            email: inputFields.email,
+            password: inputFields.password
+        }
+
+        const response = await register(formData, navigate, setError);
     };
 
     return (
@@ -130,6 +144,33 @@ function RegisterComponent() {
                         textAlign: "center",
                         marginBottom: "0.7rem"
                     }}>{errors.firstNameError}</div>
+
+                    <input
+                        className="form-input"
+                        value={inputFields.userName}
+                        onChange={handleChange}
+                        placeholder="User name"
+                        type="text"
+                        name="userName"
+                        required
+                        style={{
+                        borderColor: errors.userNameError != ""
+                            ? "red"
+                            : "white",
+                        border: errors.userNameError != ""
+                            ? "3px solid red"
+                            : "white"
+                    }}/>
+
+                    <div
+                        style={{
+                        display: errors.userNameError != ""
+                            ? "block"
+                            : "none",
+                        color: "red",
+                        textAlign: "center",
+                        marginBottom: "0.7rem"
+                    }}>{errors.userNameError}</div>
 
                     <input
                         className="form-input"

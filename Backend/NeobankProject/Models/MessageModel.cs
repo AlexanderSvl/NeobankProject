@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace NeobankProject.Models
 {
@@ -8,6 +9,6 @@ namespace NeobankProject.Models
         public Guid Id { get; set; }
 
         [Required]
-        public string MessageValue { get; set; }
+        public string Description { get; set; }
     }
 }

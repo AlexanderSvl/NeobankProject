@@ -12,9 +12,25 @@
   }
 
   #settings {
+      text-align: center;
       position: fixed;
       bottom: 1rem;
       width: 7.5vw;
+  }
+
+  #myAccount {
+      text-align: center;
+      position: fixed;
+      bottom: 3.5rem;
+      width: 7.5vw;
+  }
+
+  #myAccount:after {
+      display: none;
+  }
+
+  #settings:after {
+      display: none;
   }
 
   .menu-list {
@@ -24,7 +40,8 @@
   }
 
   .menu-item {
-    position: relative; /* Set position to relative */
+      position: relative;
+      /* Set position to relative */
       margin-bottom: 1rem;
       cursor: pointer;
       font-size: 1.2rem;
@@ -38,17 +55,17 @@
   }
 
   .menu-item::after {
-    content: ''; 
-    position: absolute; 
-    top: 50%;
-    right: 1rem; 
-    width: 0; 
-    height: 0; 
-    border-left: 5px solid transparent; 
-    border-right: 5px solid transparent; 
-    border-top: 5px solid white; 
-    transform: translateY(-50%); 
-}
+      content: '';
+      position: absolute;
+      top: 50%;
+      right: 1rem;
+      width: 0;
+      height: 0;
+      border-left: 5px solid transparent;
+      border-right: 5px solid transparent;
+      border-top: 5px solid white;
+      transform: translateY(-50%);
+  }
 
   .content {
       flex: 1;
@@ -81,26 +98,26 @@
   }
 
   .monthly-spendings {
-    text-align: center;
-}
+      text-align: center;
+  }
 
   .recent-transactions {
-    text-align: center;
-}
+      text-align: center;
+  }
 
   #balance-animation-h1 {
-    font-size: 3rem;
-    color: whitesmoke;
+      font-size: 3rem;
+      color: whitesmoke;
   }
 
   #total-balance-h1 {
       margin-top: 3rem;
-    font-size: 2.5rem;
-    color: whitesmoke;
+      font-size: 2.5rem;
+      color: whitesmoke;
   }
 
   .total-balance-content, .monthly-spendings-content {
-    background-color: rgb(73, 85, 87);
+      background-color: rgb(73, 85, 87);
       border-radius: 1rem;
       border: 3px solid rgba(255, 255, 255, 0.199);
       margin: 1vw;
@@ -109,47 +126,48 @@
   }
 
   .recent-transactions-content {
-      background-color: rgb(73, 85, 87);;
-    border-radius: 1rem;
-    border: 3px solid rgba(255, 255, 255, 0.199);
-    margin: 1vw;
-    height: 90%;
-    width: 97.5%;
+      background-color: rgb(73, 85, 87);
+      ;
+      border-radius: 1rem;
+      border: 3px solid rgba(255, 255, 255, 0.199);
+      margin: 1vw;
+      height: 90%;
+      width: 97.5%;
   }
 
   .coins-image {
-    width: 10rem;
-    opacity: 0; /* Start with 0 opacity */
-    animation: fadeIn 2s ease-in forwards; /* Apply the fadeIn animation */
-}
+      width: 10rem;
+      opacity: 0;
+      /* Start with 0 opacity */
+      animation: fadeIn 2s ease-in forwards;
+      /* Apply the fadeIn animation */
+  }
 
-@keyframes fadeIn {
-    from {
-        opacity: 0; /* Start with 0 opacity */
-    }
-    to {
-        opacity: 1; /* End with full opacity */
-    }
-}
+  @keyframes fadeIn {
+      from {
+          opacity: 0;
+          /* Start with 0 opacity */
+      }
 
-.monthly-spendings-h1 {
-    margin-top: 3rem;
-    font-size: 2.5rem;
-    color: whitesmoke;
-}
+      to {
+          opacity: 1;
+          /* End with full opacity */
+      }
+  }
 
-#monthly-spendings-h2 {
-    margin-top: -1rem;
-    font-size: 1.5rem;
-    color: whitesmoke;
-}
+  .monthly-spendings-h1 {
+      margin-top: 3rem;
+      font-size: 2.5rem;
+      color: whitesmoke;
+  }
 
-#monthly-spendings-value {
-    margin-top: 5rem;
-    font-size: 3rem;
-}
+  #monthly-spendings-h2 {
+      margin-top: -1rem;
+      font-size: 1.5rem;
+      color: whitesmoke;
+  }
 
-
-
-
-
+  #monthly-spendings-value {
+      margin-top: 5rem;
+      font-size: 3rem;
+  }

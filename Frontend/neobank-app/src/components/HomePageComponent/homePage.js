@@ -27,6 +27,7 @@ function HomePageComponent() {
                     <li className="menu-item">Vaults</li>
                     <li className="menu-item">Spendings</li>
                     <li className="menu-item">Reports</li>
+                    <li className="menu-item" id="myAccount">My Account</li>
                     <li className="menu-item" id="settings">Settings</li>
                 </ul>
             </div>

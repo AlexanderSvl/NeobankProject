@@ -50,7 +50,7 @@ namespace NeobankProject.DataAccess.Repositories
 
             if (messageToUpdate != null)
             {
-                messageToUpdate.MessageValue = newMessage.MessageValue;
+                messageToUpdate.Description = newMessage.Description;
                 await context.SaveChangesAsync();
                 return true;
             }
