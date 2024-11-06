@@ -7,13 +7,6 @@ import dollarImage from "../../images/dollar.png"
 import RecentTransactions from "./RecentTransactionsComponent/recentTransactions"
 
 function HomePageComponent() {
-    const recentTransactionsSimulation = [
-        { ID: "1", TransactionType: "Deposit", Amount: 230.00, TransactionDate: new Date(), Status: "Pending" },
-        { ID: "2", TransactionType: "Withdrawal", Amount: 330.00, TransactionDate: new Date(), Status: "Completed" },
-        { ID: "3", TransactionType: "Transfer", Amount: 1090.60, TransactionDate: new Date(), Status: "Completed" },
-        { ID: "4", TransactionType: "Transfer", Amount: 3.30, TransactionDate: new Date(), Status: "Failed" },
-    ]
-
     return (
         <div className="main-container">
             <div className="menu">
