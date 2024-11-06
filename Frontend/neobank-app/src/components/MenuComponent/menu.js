@@ -7,7 +7,7 @@ function Menu() {
         <div className="menu">
             <div className="menu-header">Menu</div>
             <ul className="menu-list">
-                <li className="menu-item"><Link to="/my-wallet">My Wallet</Link></li>
+                <li className="menu-item"><Link to="/home">Home</Link></li>
                 <li className="menu-item"><Link to="/transactions">Transactions</Link></li>
                 <li className="menu-item"><Link to="/investing">Investing</Link></li>
                 <li className="menu-item"><Link to="/stocks">Stocks</Link></li>

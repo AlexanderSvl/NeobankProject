@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useNavigate } from 'react-router-dom';  // Import the useNavigate hook
 import "./recentTransactions.css";
 
 const recentTransactionsSimulation = [
@@ -13,9 +14,10 @@ const recentTransactionsSimulation = [
 
 const RecentTransactions = () => {
     const [showAll, setShowAll] = useState(false);
+    const navigate = useNavigate();  // Initialize the navigate function
 
     const handleClick = () => {
-        setShowAll(true);
+        navigate('/transactions');  // Navigate to /transactions after clicking
     };
 
     const transactionsToShow = showAll ? recentTransactionsSimulation : recentTransactionsSimulation.slice(0, 6);
