@@ -5,25 +5,12 @@ import './homePage.css';
 import { useSpring, animated } from "react-spring";
 import dollarImage from "../../images/dollar.png"
 import RecentTransactions from "./RecentTransactionsComponent/recentTransactions"
+import MenuComponent from "../MenuComponent/menu"
 
 function HomePageComponent() {
     return (
         <div className="main-container">
-            <div className="menu">
-                <div className="menu-header">Menu</div>
-                <ul className="menu-list">
-                    <li className="menu-item">My Wallet</li>
-                    <li className="menu-item">Transactions</li>
-                    <li className="menu-item">Investing</li>
-                    <li className="menu-item">Stocks</li>
-                    <li className="menu-item">Crypto</li>
-                    <li className="menu-item">Vaults</li>
-                    <li className="menu-item">Spendings</li>
-                    <li className="menu-item">Reports</li>
-                    <li className="menu-item" id="myAccount">My Account</li>
-                    <li className="menu-item" id="settings">Settings</li>
-                </ul>
-            </div>
+            <MenuComponent />
             <div className="content">
                 <div className="default-content">
                     <div className="total-balance">

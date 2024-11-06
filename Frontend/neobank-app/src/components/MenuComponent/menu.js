@@ -1,4 +1,5 @@
 import React from 'react';
+import "./menu.css";
 import { Link } from 'react-router-dom';
 
 function Menu() {
@@ -14,8 +15,11 @@ function Menu() {
                 <li className="menu-item"><Link to="/vaults">Vaults</Link></li>
                 <li className="menu-item"><Link to="/spendings">Spendings</Link></li>
                 <li className="menu-item"><Link to="/reports">Reports</Link></li>
-                <li className="menu-item"><Link to="/my-account">My Account</Link></li>
-                <li className="menu-item"><Link to="/settings">Settings</Link></li>
+
+                <div className="bottom-items">
+                    <li className="menu-item"><Link to="/my-account">My Account</Link></li>
+                    <li className="menu-item"><Link to="/settings">Settings</Link></li>
+                </div>
             </ul>
         </div>
     );
