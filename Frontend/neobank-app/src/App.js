@@ -7,6 +7,7 @@ import RegisterComponent from './components/RegisterPageComponent/registerPage';
 import LoginComponent from './components/LoginPageComponent/loginPage';
 import HomePageComponent from './components/HomePageComponent/homePage';
 import TransactionsComponent from './components/TransactionsComponent/transactions';
+import SpendingsComponent from './components/SpendingsComponent/spendings';
 
 function App() {
     return (
@@ -16,6 +17,7 @@ function App() {
                 <Route path={'/login'} element={< LoginComponent />}></Route>
                 <Route path={'/home'} element={< HomePageComponent />}></Route>
                 <Route path={'/transactions'} element={< TransactionsComponent />}></Route>
+                <Route path={'/spendings'} element={< SpendingsComponent />}></Route>
                 <Route path={'/'} element={< LandingPageComponent />}></Route>
             </Routes>
         </Router>
