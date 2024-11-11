@@ -49,3 +49,12 @@
     align-items: center;
     justify-content: center;
 }
+
+.bar-chart-wrapper {
+    margin-left: 10rem;
+    width: 30vw;
+    height: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
