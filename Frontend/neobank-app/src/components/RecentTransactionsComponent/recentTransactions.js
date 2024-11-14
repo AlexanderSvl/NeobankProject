@@ -20,7 +20,7 @@ const RecentTransactions = () => {
         navigate('/transactions');  // Navigate to /transactions after clicking
     };
 
-    const transactionsToShow = showAll ? recentTransactionsSimulation : recentTransactionsSimulation.slice(0, 6);
+    const transactionsToShow = showAll ? recentTransactionsSimulation : recentTransactionsSimulation.slice(0, 5);
 
     return (
         <div className="recent-transactions">
@@ -37,7 +37,7 @@ const RecentTransactions = () => {
                         </li>
                     ))}
                 </ul>
-                {!showAll && recentTransactionsSimulation.length > 6 && (
+                {!showAll && recentTransactionsSimulation.length > 5 && (
                     <button className="see-all-button" onClick={handleClick}>See all</button>
                 )}
             </div>

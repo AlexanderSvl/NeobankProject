@@ -1,6 +1,6 @@
 // MOCK DATA GENERATOR
 //
-// Created by: AlEXANDER SVL.
+// Created by: ALEXANDER SVL.
 //
 // Date: 14.11.2024
 //

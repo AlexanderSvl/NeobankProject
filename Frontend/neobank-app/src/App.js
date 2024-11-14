@@ -9,6 +9,7 @@ import HomePageComponent from './components/HomePageComponent/homePage';
 import TransactionsComponent from './components/TransactionsComponent/transactions';
 import SpendingsComponent from './components/SpendingsComponent/spendings';
 import InvestingComponent from './components/InvestingComponent/investing';
+import StocksComponent from './components/StocksComponent/stocks';
 
 function App() {
     return (
@@ -20,6 +21,7 @@ function App() {
                 <Route path={'/transactions'} element={< TransactionsComponent />}></Route>
                 <Route path={'/spendings'} element={< SpendingsComponent />}></Route>
                 <Route path={'/investing'} element={< InvestingComponent />}></Route>
+                <Route path={'/stocks'} element={< StocksComponent />}></Route>
                 <Route path={'/'} element={< LandingPageComponent />}></Route>
             </Routes>
         </Router>

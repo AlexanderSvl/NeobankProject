@@ -1,0 +1,57 @@
+.main-container {
+    display: flex;
+    height: 100vh;
+    width: 100%;
+}
+
+.stocks-content {
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    padding: 1rem;
+    background-color: rgb(73, 85, 87);
+    border-radius: 8px;
+    border: 3px solid rgba(255, 255, 255, 0.199);
+    margin: 2.2rem;
+    height: 92.6%;
+    width: 40%;
+}
+
+#top-movers {
+    color: whitesmoke;
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.top-movers {
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    border-radius: 8px;
+    color: whitesmoke;
+}
+
+.top-movers ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.stock-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.stock-symbol, .stock-name, .stock-movement {
+    margin-right: 10px;
+}
+
+.stock-movement {
+    font-weight: 300;
+    background-color: whitesmoke;
+    padding: 0.3rem;
+    border-radius: 0.3rem;
+    width: 5rem;
+    text-align: center;
+}

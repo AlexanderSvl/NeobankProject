@@ -11,7 +11,6 @@
 }
 
 .recent-transactions-content h2 {
-    margin-top: 1;
     margin-bottom: 2rem;
 }
 
@@ -81,7 +80,7 @@
 }
 
 .see-all-button {
-    background-color: rgba(42, 128, 150, 0.8);
+    background-color: rgb(102, 112, 116);
     color: white;
     border: none;
     border-radius: 5px;
@@ -90,8 +89,9 @@
     margin-top: 1rem;
     align-self: center;
     text-align: center;
+    margin-top: 3rem;
 }
 
 .see-all-button:hover {
-    background-color: rgba(42, 128, 150, 1);
+    background-color: rgb(94, 103, 107);
 }
