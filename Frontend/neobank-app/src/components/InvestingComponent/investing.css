@@ -1,0 +1,25 @@
+/* investing.css */
+
+.main-container {
+    display: flex;
+}
+
+.investing-content {
+    flex: 1; /* Allow this section to take remaining space */
+    padding: 20px;
+    background-color: rgb(73, 85, 87);
+    border-radius: 8px;
+    margin: 20px;
+}
+
+h2 {
+    color: whitesmoke;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.loading {
+    text-align: center;
+    font-size: 1.2em;
+    color: whitesmoke;
+}

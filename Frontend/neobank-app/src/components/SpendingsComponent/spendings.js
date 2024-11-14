@@ -63,7 +63,7 @@ function Spendings() {
             datasets: [{
                 data: [500, 200, 100, 80, 120],
                 backgroundColor: [
-                    'rgba(133, 193, 233, 0.85)',
+                    'rgba(133, 193, 213, 0.85)',
                     'rgba(171, 178, 185, 0.85)',
                     'rgba(184, 233, 148, 0.85)',
                     'rgba(243, 156, 18, 0.85)',
@@ -105,10 +105,8 @@ function Spendings() {
             labels: ['June', 'July', 'August', 'September', 'October', 'November'],
             datasets: [{
                 label: 'Monthly Spendings',
-                data: [1200, 1500, 1100, 1400, 1300, 1250],
-                backgroundColor: 'rgba(171, 178, 185, 0.85)',
-                borderColor: 'rgb(119, 125, 132)', // Add a border for contrast
-                borderWidth: 2,
+                data: [1221.65, 1452.42, 1023.43, 1845.32, 1312.65, 1429.14],
+                backgroundColor: 'rgba(133, 193, 213, 0.85)'
             }],
         };
 
@@ -122,7 +120,7 @@ function Spendings() {
                     easing: 'easeInOutQuad',
                 },
                 plugins: {
-                    legend: { display: true, labels: { color: 'whitesmoke' }},
+                    legend: { display: true, labels: { color: 'whitesmoke', font: {size: 15} }},
                     tooltip: {
                         callbacks: {
                             label: (context) => `${context.dataset.label}: $${context.raw.toFixed(2)}`,
