@@ -4,7 +4,7 @@ import TypingAnimation from "react-typed";
 import './homePage.css';
 import { useSpring, animated } from "react-spring";
 import dollarImage from "../../images/dollar.png"
-import RecentTransactions from "./RecentTransactionsComponent/recentTransactions"
+import RecentTransactions from "../RecentTransactionsComponent/recentTransactions"
 import MenuComponent from "../MenuComponent/menu"
 
 function HomePageComponent() {

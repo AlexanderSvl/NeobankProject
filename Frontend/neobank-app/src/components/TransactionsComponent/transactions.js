@@ -57,7 +57,7 @@ const recentTransactionsSimulation = [
 
 function Transactions() {
     const [currentPage, setCurrentPage] = useState(1);
-    const pageSize = 15;
+    const pageSize = 14;
 
     const totalPages = Math.ceil(recentTransactionsSimulation.length / pageSize);
 
@@ -82,14 +82,14 @@ function Transactions() {
             <div className="transactions">
                 <div className="recent-transactions">
                     <div className="recent-transactions-content">
-                        <h2>Recent Transactions</h2>
+                        <h2 className="recent-transactions-content-title">Recent Transactions</h2>
                         <ul className="transaction-list">
                             {transactionsToShow.map((transaction) => (
                                 <li key={transaction.ID} className={`transaction-item ${transaction.Status.toLowerCase()}`}>
                                     <span className="transaction-type">{transaction.TransactionType}</span>
                                     <span className="transaction-amount">${transaction.Amount.toFixed(2)}</span>
                                     <span className="transaction-date">{transaction.TransactionDate.toLocaleString()}</span>
-                                    <span className="transaction-description">{transaction.Description.toLocaleString()}</span>
+                                    {/*<span className="transaction-description">{transaction.Description.toLocaleString()}</span>*/}
                                     <span className={`transaction-status ${transaction.Status.toLowerCase()}`}>{transaction.Status}</span>
                                 </li>
                             ))}

@@ -1,6 +1,6 @@
 .recent-transactions-content {
     background-color: rgb(73, 85, 87);
-    border-radius: 1rem;
+    border-radius: 8px;
     border: 3px solid rgba(255, 255, 255, 0.199);
     margin: 1vw;
     height: 90%;

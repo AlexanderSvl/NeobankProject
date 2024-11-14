@@ -32,7 +32,7 @@ const RecentTransactions = () => {
                             <span className="transaction-type">{transaction.TransactionType}</span>
                             <span className="transaction-amount">${transaction.Amount.toFixed(2)}</span>
                             <span className="transaction-date">{transaction.TransactionDate.toLocaleString()}</span>
-                            <span className="transaction-description">{transaction.Description.toLocaleString()}</span>
+                            {/*<span className="transaction-description">{transaction.Description.toLocaleString()}</span>*/}
                             <span className={`transaction-status ${transaction.Status.toLowerCase()}`}>{transaction.Status}</span>
                         </li>
                     ))}

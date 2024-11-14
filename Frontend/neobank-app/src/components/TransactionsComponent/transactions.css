@@ -1,49 +1,51 @@
 .transactions-container {
-    display: flex;        
+    display: flex;                 /* Flexbox for menu and transactions side by side */
+    height: 100vh;                 /* Full viewport height */
 }
 
-.menu {
-    min-width: 150px;     
-}
 
 .transactions {
-    flex: 1;               
-    width: 100%;
+    display: flex;                 /* Flexbox to allow flexible content */
+    flex-direction: column;        /* Arrange elements vertically */
+    flex-grow: 1;                  /* Take the remaining space after the menu */
+    box-sizing: border-box;        /* Include padding in total height */
     padding: 1rem;
 }
 
-.transactions .recent-transactions-content {
-    height: 89.3vh;
+.recent-transactions-content {
+    overflow-y: auto;              /* Allow scrolling if content overflows */
+    flex-grow: 1;                  /* Allow content to take up the available space */
 }
 
 .pagination {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 20px;
+    position: fixed;
+    bottom: 4.5rem;
+    left: 12rem;
+    right: 0;
+    margin: auto;
 }
 
 .pagination-button {
     padding: 8px 12px;
     margin: 0 2rem;
-    background-color: rgb(108, 127, 131);; 
+    background-color: rgb(108, 127, 131);
     color: white;
     border: 1px solid #ccc;
     border-radius: 7px;
     cursor: pointer;
     font-size: 1rem;
-    transition: background-color 0.2s ease, border-color 0.2s ease; 
+    transition: background-color 0.2s ease, border-color 0.2s ease;
 }
 
 .pagination-button:hover {
     background-color: #e0e0e0;
-    border-color: #999; 
+    border-color: #999;
 }
 
 .pagination-button:disabled {
     background-color: #f7f7f7;
-    color: #bbb; 
-    border: 1px solid #ddd; 
+    color: #bbb;
+    border: 1px solid #ddd;
     cursor: not-allowed;
 }
 

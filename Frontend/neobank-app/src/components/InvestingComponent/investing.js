@@ -1,18 +1,20 @@
 import React, { useEffect, useState } from 'react';
-import MenuComponent from '../MenuComponent/menu';  
+import MenuComponent from '../MenuComponent/menu';  // Import the MenuComponent
 import { Line } from 'react-chartjs-2';
 import { Chart as ChartJS, CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip, Legend } from 'chart.js';
 import './investing.css';
-import MockStockData from '../MockDataComponent/mockStockData'; 
+import MockStockData from '../MockDataComponent/mockStockData';  // Import the mock data generator
 
 ChartJS.register(CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip, Legend);
 
 const InvestingComponent = () => {
-    const [chartData, setChartData] = useState(null);
-    const symbol = 'NVDA';  // You can change this to any symbol
+    const [chartData, setChartData] = useState(null);  // Chart data state
+    const [loading, setLoading] = useState(true);  // Loading state to track data loading process
 
     useEffect(() => {
+        // Use the MockStockData to generate mock data
         const generateMockData = () => {
+            const symbol = 'NVDA';  // You can change this to any symbol
             const mockData = MockStockData(symbol);  // Generate mock data
             setChartData({
                 labels: mockData.map(item => item.date),
@@ -27,16 +29,22 @@ const InvestingComponent = () => {
                     },
                 ],
             });
+            setLoading(false);  // Set loading to false once data is loaded
         };
 
-        generateMockData(); 
+        generateMockData();  // Call function to generate mock data
     }, []);
+
+    if (loading) {
+        // If loading, display a loading message
+        return <div className="loading">Loading...</div>;
+    }
 
     return (
         <div className="main-container">
-            <MenuComponent />
+            <MenuComponent />  {/* Display the MenuComponent on the side */}
             <div className="investing-content">
-                <h2>{symbol} Stock Data</h2>
+                <h2>Mock Stock Data</h2>
                 <Line
                     data={chartData}
                     options={{
@@ -46,7 +54,7 @@ const InvestingComponent = () => {
                                 display: true, 
                                 position: 'top', 
                                 labels: {
-                                    color: 'whitesmoke',  
+                                    color: 'whitesmoke',  // Set the label text color to whitesmoke
                                 },
                             },
                             title: { 
