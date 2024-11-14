@@ -1,6 +1,13 @@
-import React from 'react';
+// MOCK DATA GENERATOR
+//
+// Created by: AlEXANDER SVL.
+//
+// Date: 14.11.2024
+//
+// This generator will accurately represent real stock market data, daily fluctuations, etc. 
+// It will be used widely in this application for the sake of data visualisation. This generator
+// can also be used for mocking crypto data. 
 
-// Function to generate a realistic random change for each day (volatility)
 const generateRandomPriceChange = (previousPrice) => {
     // Generate a small random change for the price, this is usually a percentage change
     const volatility = 0.02; // 2% max daily fluctuation
@@ -9,7 +16,7 @@ const generateRandomPriceChange = (previousPrice) => {
 };
 
 // React component to generate mock stock data for the last 30 days
-const MockStockData = (symbol) => {
+const MockStockData = () => {
     const today = new Date();
     const mockData = [];
     

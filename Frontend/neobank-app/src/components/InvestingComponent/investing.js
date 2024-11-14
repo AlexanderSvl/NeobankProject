@@ -10,11 +10,11 @@ ChartJS.register(CategoryScale, LinearScale, PointElement, LineElement, Title, T
 const InvestingComponent = () => {
     const [chartData, setChartData] = useState(null);  // Chart data state
     const [loading, setLoading] = useState(true);  // Loading state to track data loading process
+    const symbol = 'NVDA';  // You can change this to any symbol
 
     useEffect(() => {
         // Use the MockStockData to generate mock data
         const generateMockData = () => {
-            const symbol = 'NVDA';  // You can change this to any symbol
             const mockData = MockStockData(symbol);  // Generate mock data
             setChartData({
                 labels: mockData.map(item => item.date),
@@ -35,6 +35,7 @@ const InvestingComponent = () => {
         generateMockData();  // Call function to generate mock data
     }, []);
 
+
     if (loading) {
         // If loading, display a loading message
         return <div className="loading">Loading...</div>;
@@ -44,49 +45,66 @@ const InvestingComponent = () => {
         <div className="main-container">
             <MenuComponent />  {/* Display the MenuComponent on the side */}
             <div className="investing-content">
-                <h2>Mock Stock Data</h2>
-                <Line
-                    data={chartData}
-                    options={{
-                        responsive: true,
-                        plugins: {
-                            legend: { 
-                                display: true, 
-                                position: 'top', 
-                                labels: {
-                                    color: 'whitesmoke',  // Set the label text color to whitesmoke
+                <h2>{symbol} Stock Data</h2>
+                <div className="stock-chart-data">
+                    <Line
+                        data={chartData}
+                        options={{
+                            responsive: true,
+                            plugins: {
+                                legend: {
+                                    display: true,
+                                    position: 'top',
+                                    labels: {
+                                        color: 'whitesmoke',  
+                                    },
+                                },
+                                title: {
+                                    display: true,
+                                    text: 'Stock Price (Last 30 Days)',
+                                    color: 'whitesmoke'
+                                },
+                                tooltip: {
+                                    callbacks: {
+                                        label: function (context) {
+                                            let label = context.dataset.label || '';
+                                            if (label) {
+                                                label += ': ';
+                                            }
+                                            label += `$${context.raw.toFixed(2)}`; 
+                                            return label;
+                                        }
+                                    }
                                 },
                             },
-                            title: { 
-                                display: true, 
-                                text: 'Stock Price (Last 30 Days)', 
-                                color: 'whitesmoke' 
-                            },
-                        },
-                        scales: {
-                            x: {
-                                title: { 
-                                    display: true, 
-                                    text: 'Date', 
-                                    color: 'whitesmoke' 
+                            scales: {
+                                x: {
+                                    title: {
+                                        display: true,
+                                        text: 'Date',
+                                        color: 'whitesmoke'
+                                    },
+                                    ticks: {
+                                        color: 'rgba(255, 255, 255, 0.5)'
+                                    }
                                 },
-                                ticks: { 
-                                    color: 'rgba(255, 255, 255, 0.199)' 
-                                }
-                            },
-                            y: {
-                                title: { 
-                                    display: true, 
-                                    text: 'Price (USD)', 
-                                    color: 'whitesmoke' 
+                                y: {
+                                    title: {
+                                        display: true,
+                                        text: 'Price (USD)',
+                                        color: 'whitesmoke'
+                                    },
+                                    ticks: {
+                                        callback: function (value) {
+                                            return `$${value}`;  
+                                        },
+                                        color: 'rgba(255, 255, 255, 0.5)'
+                                    }
                                 },
-                                ticks: { 
-                                    color: 'rgba(255, 255, 255, 0.199)' 
-                                }
                             },
-                        },
-                    }}
-                />
+                        }}
+                    />
+                </div>
             </div>
         </div>
     );
