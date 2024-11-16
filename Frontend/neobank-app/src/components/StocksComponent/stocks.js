@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import MenuComponent from '../MenuComponent/menu';  // Import the MenuComponent
 import './stocks.css';
+import { Link } from 'react-router-dom';
 
 const StocksComponent = () => {
     const [stockData, setStockData] = useState([]);
@@ -34,12 +35,16 @@ const StocksComponent = () => {
                     <ul>
                         {stockData.map((stock, index) => (
                             <li key={index} className="stock-item">
-                                <span className="stock-symbol">{stock.symbol}</span>
-                                <span className="stock-name">{stock.name}</span>
+                                <span className="stock-symbol">                                   
+                                    <Link to={`/stocks/${stock.symbol}`} className="no-link-style">{stock.symbol}</Link>
+                                </span>
+                                <span className="stock-name">
+                                    <Link to={`/stocks/${stock.symbol}`} className="no-link-style">{stock.name}</Link>
+                                </span>
                                 <span
                                     className="stock-movement"
                                     style={{
-                                        backgroundColor: stock.movement > 0
+                                        backgroundColor: stock.movement > 0 
                                             ? '#a8dfc1' 
                                             : stock.movement < 0
                                                 ? '#f5b5b7' 

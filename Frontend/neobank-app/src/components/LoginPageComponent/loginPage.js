@@ -34,7 +34,7 @@ function LoginComponent() {
                 : setError({
                     ...errors,
                     emailError: "",
-                    isButtonDisabled: false // propusnata huinq
+                    isButtonDisabled: false
                 })
         } else if (name == "password") {
             !passwordRegex.test(value)
@@ -47,7 +47,7 @@ function LoginComponent() {
                 : setError({
                     ...errors,
                     passwordError: "",
-                    isButtonDisabled: false // propusnata huinq
+                    isButtonDisabled: false
                 })
         };
 

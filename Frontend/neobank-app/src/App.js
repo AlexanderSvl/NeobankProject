@@ -10,6 +10,7 @@ import TransactionsComponent from './components/TransactionsComponent/transactio
 import SpendingsComponent from './components/SpendingsComponent/spendings';
 import InvestingComponent from './components/InvestingComponent/investing';
 import StocksComponent from './components/StocksComponent/stocks';
+import StockDetailsComponent from './components/StockDetailsComponent/stockDetails'
 
 function App() {
     return (
@@ -21,6 +22,7 @@ function App() {
                 <Route path={'/transactions'} element={< TransactionsComponent />}></Route>
                 <Route path={'/spendings'} element={< SpendingsComponent />}></Route>
                 <Route path={'/investing'} element={< InvestingComponent />}></Route>
+                <Route path={"/stocks/:symbol"} element={<StockDetailsComponent />} />
                 <Route path={'/stocks'} element={< StocksComponent />}></Route>
                 <Route path={'/'} element={< LandingPageComponent />}></Route>
             </Routes>
