@@ -15,8 +15,6 @@
 .recent-transactions-content {
     overflow-y: auto;              /* Allow scrolling if content overflows */
     flex-grow: 1;                  /* Allow content to take up the available space */
-    height: 88.6vh;
-    max-height: 88.6vh;
 }
 
 .pagination {
