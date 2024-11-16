@@ -1,0 +1,32 @@
+.stock-details-main-container {
+    display: flex;
+}
+
+.stock-details-content {
+    flex: 1; 
+    background-color: rgb(73, 85, 87);
+    border: 3px solid rgba(255, 255, 255, 0.199);
+    border-radius: 8px;
+    margin: 2.2rem;
+    width: 50vw;
+    max-width: 50vw;
+    height: 55vh;
+}
+
+h2 {
+    color: whitesmoke;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.loading {
+    text-align: center;
+    font-size: 1.2em;
+    color: whitesmoke;
+}
+
+.stock-chart-data {
+    max-width: 80vw;
+    margin: 3rem;
+    margin-top: 2rem;
+}

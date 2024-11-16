@@ -30,13 +30,14 @@
 .menu-item {
     margin-bottom: 1rem;
     font-size: 1.2rem;
+    padding: 0.3rem 1.5rem 0.3rem 1rem;
 }
 
 .menu-item a {
     color: white;          
     text-decoration: none;  
     display: block;         
-    padding: 0.5rem 0;      
+    padding: 0.5rem 0;
 }
 
 .menu-item:hover {

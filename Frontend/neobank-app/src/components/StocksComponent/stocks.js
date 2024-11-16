@@ -21,13 +21,14 @@ const StocksComponent = () => {
             { symbol: 'JPM', name: 'JPMorgan Chase & Co.', movement: (Math.random() * 10 - 5).toFixed(2) },
             { symbol: 'DIS', name: 'Walt Disney Co.', movement: (Math.random() * 10 - 5).toFixed(2) },
             { symbol: 'PYPL', name: 'PayPal Holdings Inc.', movement: (Math.random() * 10 - 5).toFixed(2) },
-            { symbol: 'CSCO', name: 'Cisco Systems Inc.', movement: (Math.random() * 10 - 5).toFixed(2) }
+            { symbol: 'CSCO', name: 'Cisco Systems Inc.', movement: (Math.random() * 10 - 5).toFixed(2) },
+            { symbol: 'ITUB', name: 'Itaú Unibanco Holding S.A.', movement: (Math.random() * 10 - 5).toFixed(2) }
         ];
         setStockData(mockData);
     }, []);
 
     return (
-        <div className="main-container">
+        <div className="stocks-main-container">
             <MenuComponent />
             <div className="stocks-content">
                 <div className="top-movers">

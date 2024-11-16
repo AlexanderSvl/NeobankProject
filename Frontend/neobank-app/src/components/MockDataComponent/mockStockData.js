@@ -7,6 +7,8 @@
 // This generator will accurately represent real stock market data, daily fluctuations, etc. 
 // It will be used widely in this application for the sake of data visualisation. This generator
 // can also be used for mocking crypto data. 
+//
+// The trend can be upward, downward or no trend, simulating accurately real stock price behaviour.
 
 const generateRandomPriceChange = (previousPrice) => {
     // Generate a small random change for the price, this is usually a percentage change
@@ -19,10 +21,17 @@ const generateRandomPriceChange = (previousPrice) => {
 const MockStockData = () => {
     const today = new Date();
     const mockData = [];
-    
-    let startingPrice = 200;  // Set a starting price (initial closing price) for the stock
-    let trendFactor = Math.random() < 0.5 ? -1 : 1;  // Randomly choose an upward or downward trend (up or down)
 
+    let startingPrice = Math.floor(Math.random() * (200 - 1 + 1)) + 1;
+    let trendFactor = Math.random();
+
+    if (trendFactor < 0.4) {
+        trendFactor = -1; // Downward trend (40% chance)
+    } else if (trendFactor < 0.8) {
+        trendFactor = 1; // Upward trend (40% chance)
+    } else {
+        trendFactor = 0; // No trend (20% chance)
+    }
     for (let i = 30; i > 0; i--) {
         const date = new Date(today);
         date.setDate(today.getDate() - i);  // Go back by i days
@@ -30,10 +39,10 @@ const MockStockData = () => {
 
         // Generate the next price change based on the previous price
         startingPrice = generateRandomPriceChange(startingPrice);
-        
+
         // Apply a slight trend to the price (trend factor)
         startingPrice += trendFactor * (Math.random() * 2);  // Add a little randomness based on the trend
-        
+
         // Ensure price does not go negative
         startingPrice = Math.max(0, startingPrice.toFixed(2));
 
@@ -49,7 +58,7 @@ const MockStockData = () => {
         });
     }
 
-    return mockData.reverse();  // Reverse data to show from oldest to newest
+    return mockData;
 };
 
 export default MockStockData;

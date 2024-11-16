@@ -45,7 +45,7 @@ const StockDetailsComponent = () => {
     return (
         <div className="main-container">
             <MenuComponent />  {/* Display the MenuComponent on the side */}
-            <div className="investing-content">
+            <div className="stock-details-content">
                 <h2>{symbol} Stock Data</h2>
                 <div className="stock-chart-data">
                     <Line
