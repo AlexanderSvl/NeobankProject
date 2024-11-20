@@ -5,8 +5,8 @@
 }
 
 .stocks-content {
-    display: flex;
-    flex-direction: column;
+    display: flex; 
+    flex-direction: row;
     box-sizing: border-box;
     padding: 1rem;
     background-color: rgb(73, 85, 87);
@@ -23,11 +23,44 @@
     margin-bottom: 3rem;
 }
 
-.top-movers {
-    background-color: rgba(255, 255, 255, 0.1);
-    padding: 20px;
+.news-title {
+    background-color: rgba(255, 255, 255, 0.199);
     border-radius: 8px;
+    padding: 0.3rem;
+    margin-top: 0;
+}
+
+.top-movers {
     color: whitesmoke;
+    text-align: center;
+    margin-bottom: 3rem;
+    width: 100%;
+}
+
+.stock-news {
+    flex: 1; 
+    display: flex; 
+    flex-direction: column; 
+    background-color: rgb(73, 85, 87);
+    border-radius: 8px;
+    border: 3px solid rgba(255, 255, 255, 0.199);
+    margin: 2.2rem 2.2rem 2.2rem 0rem;
+    padding: 1rem;
+}
+
+.news-item {
+    font-size: 15px;
+    color: white;
+    height: 13rem;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    background-color: rgba(255, 255, 255, 0.116);;
+    border-radius: 8px;
+}
+
+.stock-news-heading {
+    color: whitesmoke;
+    text-align: center;
 }
 
 .top-movers ul {
