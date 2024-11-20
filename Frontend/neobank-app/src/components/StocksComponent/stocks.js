@@ -106,13 +106,14 @@ const StocksComponent = () => {
                 </div>
             </div>
             <div className="stock-news">
-                <h1 className="stock-news-heading">News</h1>
+                <h1 className="stock-news-heading">Latest news</h1>
                 <div className="news-list">
                     {stockNewsSimulation.map((newsItem) => (
                         <div key={newsItem.ID} className="news-item">
                             <h2 className="news-title">{newsItem.title}</h2>
                             <p className="news-description">{newsItem.description}</p>
                             <span className="news-date">{formatDate(newsItem.date)}</span>
+                            <a className="read-more"><Link className="no-link-style-2">Read more...</Link></a>
                         </div>
                     ))}
                 </div>

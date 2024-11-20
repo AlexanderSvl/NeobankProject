@@ -30,6 +30,19 @@
     margin-top: 0;
 }
 
+.read-more {
+    margin-left: 65%;
+    padding: 0.5rem 1rem 0.5rem 1rem;
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.199);
+    text-decoration: none;
+}
+
+.read-more:hover{
+   background-color: rgba(255, 255, 255, 0.295);
+   transition: background-color 0.2s ease;
+}
+
 .top-movers {
     color: whitesmoke;
     text-align: center;
@@ -95,6 +108,11 @@
     border-radius: 1rem;
     padding: 0.5rem 1rem 0.5rem 1rem;
     transition: background-color 0.2s ease;
+}
+
+.no-link-style-2 {
+    text-decoration: none; 
+    color: inherit; 
 }
 
 .no-link-style:hover {
