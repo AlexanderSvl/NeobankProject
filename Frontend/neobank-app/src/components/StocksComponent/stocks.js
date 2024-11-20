@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import MenuComponent from '../MenuComponent/menu';  // Import the MenuComponent
+import MenuComponent from '../MenuComponent/menu'; // Import the MenuComponent
 import './stocks.css';
 import { Link } from 'react-router-dom';
 
@@ -8,48 +8,50 @@ const stockNewsSimulation = [
         ID: "1",
         title: "NVDA Stock Plunges After Recent Discovery",
         description: "NVIDIA's stock experienced a significant drop following the revelation of vulnerabilities in its latest AI hardware. Industry analysts suggest that this discovery could impact the company's market dominance, as competitors are swiftly capitalizing on the situation. The report highlighted weaknesses in production scalability and performance optimization, raising concerns among investors. However, some experts believe that NVIDIA's innovative track record might allow it to overcome this hurdle with timely fixes and robust strategies.",
+        fullText: "Lorem ipsumLorem ipsum odor amet, consectetuer adipiscing elit. Scelerisque fermentum a ridiculus vivamus egestas himenaeos ac. In blandit etiam venenatis curabitur, libero fringilla. Ipsum nam sodales elementum, fusce massa vulputate natoque. Ex dignissim odio nam luctus ex vestibulum magna. Consectetur blandit condimentum cubilia neque hendrerit per sem. Quam augue quam lobortis pulvinar justo. Leo eros lectus convallis curabitur netus justo rutrum natoque. \n\nAt finibus adipiscing tempor porttitor proin, feugiat vestibulum vestibulum. Malesuada nulla praesent interdum donec hendrerit id maecenas id. Cras phasellus lectus maecenas vestibulum; aptent nunc eget montes. Praesent sociosqu enim litora; erat sagittis fringilla. Elit nullam volutpat vestibulum nibh neque donec proin aliquam. Luctus efficitur lacinia, dis vulputate a facilisis. Eros vitae risus diam; quisque nullam eros efficitur. Rhoncus rhoncus quisque etiam habitant dis, habitant donec. Laoreet dui dis laoreet fermentum urna tellus luctus. Primis proin primis hendrerit tellus ornare ullamcorper. Donec auctor ligula nunc porta montes lobortis conubia. Nisi et arcu varius adipiscing commodo pharetra efficitur class. Parturient cubilia mollis, interdum posuere fames taciti? Aliquam quis nunc libero quisque quisque elementum risus senectus. Morbi nisl purus consequat facilisi consectetur. Nam torquent nostra tortor malesuada mattis phasellus nunc. Turpis tempor suscipit tempor eu lorem? Venenatis natoque sapien proin nam, augue diam ullamcorper nisi. Facilisi himenaeos semper iaculis lacinia dictum; sociosqu curae. Varius dis elementum class scelerisque velit; cras porttitor fringilla. \n\nLitora sagittis purus nam egestas ante. Tristique sollicitudin euismod himenaeos; libero nunc amet gravida imperdiet. Leo nunc sed, congue porta tellus torquent. Mauris primis justo fringilla nostra orci penatibus felis. Erat in metus ultrices morbi vel urna. Ligula eget ipsum tempus conubia nascetur quisque natoque. Blandit magnis neque duis vitae habitant. Dictum habitant per nullam vestibulum vivamus lacus fermentum. Cras neque mattis fringilla fringilla sagittis finibus consectetur ex. Netus fermentum sit vitae lobortis fermentum blandit. Sapien vulputate habitasse turpis sem vehicula auctor. Arcu vulputate efficitur est nisi facilisis diam. Cras lobortis urna aenean torquent nulla ornare etiam. \n\n Mauris primis justo fringilla nostra orci penatibus felis. Erat in metus ultrices morbi vel urna. Ligula eget ipsum tempus conubia nascetur quisque natoque. Blandit magnis neque duis vitae habitant. Dictum habitant per nullam vestibulum vivamus lacus fermentum. Cras neque mattis fringilla fringilla sagittis finibus consectetur ex. Netus fermentum sit vitae lobortis fermentum blandit. Sapien vulputate habitasse turpis sem vehicula auctor. Arcu vulputate efficitur est nisi facilisis diam. Cras lobortis urna aenean torquent nulla ornare etiam.",
         date: "20-11-2024"
     },
     {
         ID: "2",
         title: "Tech Stocks Surge Amid Optimistic Market Sentiment",
         description: "Major tech stocks saw a sharp rise as the market responded positively to reports of improved economic indicators and promising corporate earnings. Companies such as Apple, Microsoft, and Google led the rally, showcasing resilience in the face of global economic uncertainties. Analysts highlight that the sector's sustained growth is driven by advancements in AI, cloud computing, and consumer electronics. This rally provides a renewed sense of confidence for investors who have weathered volatile market trends in recent months.",
+        fullText: "Lorem ipsumLorem ipsum odor amet, consectetuer adipiscing elit. Scelerisque fermentum a ridiculus vivamus egestas himenaeos ac. In blandit etiam venenatis curabitur, libero fringilla. Ipsum nam sodales elementum, fusce massa vulputate natoque. Ex dignissim odio nam luctus ex vestibulum magna. Consectetur blandit condimentum cubilia neque hendrerit per sem. Quam augue quam lobortis pulvinar justo. Leo eros lectus convallis curabitur netus justo rutrum natoque. \n\nAt finibus adipiscing tempor porttitor proin, feugiat vestibulum vestibulum. Malesuada nulla praesent interdum donec hendrerit id maecenas id. Cras phasellus lectus maecenas vestibulum; aptent nunc eget montes. Praesent sociosqu enim litora; erat sagittis fringilla. Elit nullam volutpat vestibulum nibh neque donec proin aliquam. Luctus efficitur lacinia, dis vulputate a facilisis. Eros vitae risus diam; quisque nullam eros efficitur. Rhoncus rhoncus quisque etiam habitant dis, habitant donec. Laoreet dui dis laoreet fermentum urna tellus luctus. Primis proin primis hendrerit tellus ornare ullamcorper. Donec auctor ligula nunc porta montes lobortis conubia. Nisi et arcu varius adipiscing commodo pharetra efficitur class. Parturient cubilia mollis, interdum posuere fames taciti? Aliquam quis nunc libero quisque quisque elementum risus senectus. Morbi nisl purus consequat facilisi consectetur. Nam torquent nostra tortor malesuada mattis phasellus nunc. Turpis tempor suscipit tempor eu lorem? Venenatis natoque sapien proin nam, augue diam ullamcorper nisi. Facilisi himenaeos semper iaculis lacinia dictum; sociosqu curae. Varius dis elementum class scelerisque velit; cras porttitor fringilla. \n\nLitora sagittis purus nam egestas ante. Tristique sollicitudin euismod himenaeos; libero nunc amet gravida imperdiet. Leo nunc sed, congue porta tellus torquent. Mauris primis justo fringilla nostra orci penatibus felis. Erat in metus ultrices morbi vel urna. Ligula eget ipsum tempus conubia nascetur quisque natoque. Blandit magnis neque duis vitae habitant. Dictum habitant per nullam vestibulum vivamus lacus fermentum. Cras neque mattis fringilla fringilla sagittis finibus consectetur ex. Netus fermentum sit vitae lobortis fermentum blandit. Sapien vulputate habitasse turpis sem vehicula auctor. Arcu vulputate efficitur est nisi facilisis diam. Cras lobortis urna aenean torquent nulla ornare etiam. \n\n Mauris primis justo fringilla nostra orci penatibus felis. Erat in metus ultrices morbi vel urna. Ligula eget ipsum tempus conubia nascetur quisque natoque. Blandit magnis neque duis vitae habitant. Dictum habitant per nullam vestibulum vivamus lacus fermentum. Cras neque mattis fringilla fringilla sagittis finibus consectetur ex. Netus fermentum sit vitae lobortis fermentum blandit. Sapien vulputate habitasse turpis sem vehicula auctor. Arcu vulputate efficitur est nisi facilisis diam. Cras lobortis urna aenean torquent nulla ornare etiam.",
         date: "20-11-2024"
     },
     {
         ID: "3",
         title: "EV Market Faces Headwinds As Raw Material Costs Soar",
         description: "Electric vehicle manufacturers are grappling with rising costs of raw materials, particularly lithium and cobalt, leading to increased production expenses. Tesla, Rivian, and traditional automakers are facing pressure to maintain profitability while offering competitive pricing. Experts caution that these challenges could slow EV adoption rates unless sustainable sourcing methods or cost-efficient technologies emerge. Despite the hurdles, the long-term outlook for the EV market remains optimistic, driven by growing environmental awareness and supportive government policies.",
+        fullText: "Lorem ipsumLorem ipsum odor amet, consectetuer adipiscing elit. Scelerisque fermentum a ridiculus vivamus egestas himenaeos ac. In blandit etiam venenatis curabitur, libero fringilla. Ipsum nam sodales elementum, fusce massa vulputate natoque. Ex dignissim odio nam luctus ex vestibulum magna. Consectetur blandit condimentum cubilia neque hendrerit per sem. Quam augue quam lobortis pulvinar justo. Leo eros lectus convallis curabitur netus justo rutrum natoque. \n\nAt finibus adipiscing tempor porttitor proin, feugiat vestibulum vestibulum. Malesuada nulla praesent interdum donec hendrerit id maecenas id. Cras phasellus lectus maecenas vestibulum; aptent nunc eget montes. Praesent sociosqu enim litora; erat sagittis fringilla. Elit nullam volutpat vestibulum nibh neque donec proin aliquam. Luctus efficitur lacinia, dis vulputate a facilisis. Eros vitae risus diam; quisque nullam eros efficitur. Rhoncus rhoncus quisque etiam habitant dis, habitant donec. Laoreet dui dis laoreet fermentum urna tellus luctus. Primis proin primis hendrerit tellus ornare ullamcorper. Donec auctor ligula nunc porta montes lobortis conubia. Nisi et arcu varius adipiscing commodo pharetra efficitur class. Parturient cubilia mollis, interdum posuere fames taciti? Aliquam quis nunc libero quisque quisque elementum risus senectus. Morbi nisl purus consequat facilisi consectetur. Nam torquent nostra tortor malesuada mattis phasellus nunc. Turpis tempor suscipit tempor eu lorem? Venenatis natoque sapien proin nam, augue diam ullamcorper nisi. Facilisi himenaeos semper iaculis lacinia dictum; sociosqu curae. Varius dis elementum class scelerisque velit; cras porttitor fringilla. \n\nLitora sagittis purus nam egestas ante. Tristique sollicitudin euismod himenaeos; libero nunc amet gravida imperdiet. Leo nunc sed, congue porta tellus torquent. Mauris primis justo fringilla nostra orci penatibus felis. Erat in metus ultrices morbi vel urna. Ligula eget ipsum tempus conubia nascetur quisque natoque. Blandit magnis neque duis vitae habitant. Dictum habitant per nullam vestibulum vivamus lacus fermentum. Cras neque mattis fringilla fringilla sagittis finibus consectetur ex. Netus fermentum sit vitae lobortis fermentum blandit. Sapien vulputate habitasse turpis sem vehicula auctor. Arcu vulputate efficitur est nisi facilisis diam. Cras lobortis urna aenean torquent nulla ornare etiam. \n\n Mauris primis justo fringilla nostra orci penatibus felis. Erat in metus ultrices morbi vel urna. Ligula eget ipsum tempus conubia nascetur quisque natoque. Blandit magnis neque duis vitae habitant. Dictum habitant per nullam vestibulum vivamus lacus fermentum. Cras neque mattis fringilla fringilla sagittis finibus consectetur ex. Netus fermentum sit vitae lobortis fermentum blandit. Sapien vulputate habitasse turpis sem vehicula auctor. Arcu vulputate efficitur est nisi facilisis diam. Cras lobortis urna aenean torquent nulla ornare etiam.",
         date: "20-11-2024"
     }
-    // {
-    //     ID: "4",
-    //     title: "Meta Unveils Groundbreaking AI-Powered Collaboration Tool",
-    //     description: "Meta Platforms has introduced a cutting-edge AI-powered collaboration tool aimed at transforming workplace productivity. The tool integrates seamlessly with existing communication platforms, leveraging machine learning to automate routine tasks, optimize workflows, and enhance team collaboration. Initial reviews highlight its intuitive interface and powerful analytics capabilities, positioning Meta as a strong contender in the enterprise software market. The release marks another step in Meta's broader strategy to diversify its offerings beyond social media.",
-    //     date: "20-11-2024"
-    // },
-    // {
-    //     ID: "5",
-    //     title: "Global Semiconductor Industry Braces for Recovery in 2025",
-    //     description: "The semiconductor industry is cautiously optimistic about a recovery in 2025 following a challenging period marked by supply chain disruptions and geopolitical tensions. Companies like Intel and TSMC are ramping up efforts to expand production capacity and diversify supply chains. Experts suggest that upcoming innovations in 3nm chips and AI-optimized processors could reinvigorate the market. However, the industry must navigate ongoing challenges, including fluctuating demand and regulatory hurdles, to achieve sustainable growth.",
-    //     date: "20-11-2024"
-    // }
 ];
 
 function formatDate(dateString) {
-    const dateParts = dateString.split("-"); 
-    const [day, month, year] = dateParts.map(Number); 
-    const date = new Date(year, month - 1, day); 
-    
+    const dateParts = dateString.split("-");
+    const [day, month, year] = dateParts.map(Number);
+    const date = new Date(year, month - 1, day);
+
     const options = { year: "numeric", month: "long", day: "numeric" };
     return date.toLocaleDateString("en-US", options);
 }
 
 const StocksComponent = () => {
     const [stockData, setStockData] = useState([]);
+    const [isModalOpen, setModalOpen] = useState(false);
+    const [activeNews, setActiveNews] = useState(null);
+
+    const handleReadMore = (newsItem) => {
+        setActiveNews(newsItem);
+        setModalOpen(true);
+    };
+
+    const handleCloseModal = () => {
+        setModalOpen(false);
+        setActiveNews(null);
+    };
 
     useEffect(() => {
-        // Mock stock data with random percentage movements
         const mockData = [
             { symbol: 'AAPL', name: 'Apple Inc.', movement: (Math.random() * 10 - 5).toFixed(2) },
             { symbol: 'GOOGL', name: 'Alphabet Inc.', movement: (Math.random() * 10 - 5).toFixed(2) },
@@ -66,6 +68,7 @@ const StocksComponent = () => {
             { symbol: 'CSCO', name: 'Cisco Systems Inc.', movement: (Math.random() * 10 - 5).toFixed(2) },
             { symbol: 'ITUB', name: 'Itaú Unibanco Holding S.A.', movement: (Math.random() * 10 - 5).toFixed(2) }
         ];
+
         setStockData(mockData);
     }, []);
 
@@ -99,26 +102,41 @@ const StocksComponent = () => {
                                 >
                                     {stock.movement > 0 ? `+${stock.movement}%` : `${stock.movement}%`}
                                 </span>
-
                             </li>
                         ))}
                     </ul>
                 </div>
             </div>
+
             <div className="stock-news">
                 <h1 className="stock-news-heading">Latest news</h1>
                 <div className="news-list">
                     {stockNewsSimulation.map((newsItem) => (
                         <div key={newsItem.ID} className="news-item">
                             <h2 className="news-title">{newsItem.title}</h2>
-                            <p className="news-description">{newsItem.description}</p>
+                            <p className="news-description">
+                                {newsItem.description}
+                            </p>
                             <span className="news-date">{formatDate(newsItem.date)}</span>
-                            <a className="read-more"><Link className="no-link-style-2">Read more...</Link></a>
+                            <a className="read-more" onClick={() => handleReadMore(newsItem)}>Read more...</a>
                         </div>
                     ))}
                 </div>
             </div>
 
+            {/* This is the modal for the news article. */}
+            {isModalOpen && (
+                <div className="modal">
+                    <div className="modal-content">
+                        <span className="close-button" onClick={handleCloseModal}>&times;</span>
+                        <h2>{activeNews.title}</h2>
+                        {activeNews.fullText.split('\n\n').map((paragraph, index) => (
+                            <p key={index} className="modal-content-paragraph"> {paragraph}</p>
+                        ))}
+                        <span className="news-date">{formatDate(activeNews.date)}</span>
+                    </div>
+                </div>
+            )}
         </div>
     );
 };
