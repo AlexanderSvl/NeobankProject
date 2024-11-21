@@ -170,3 +170,18 @@
     margin-top: 1rem;
     line-height: 1.6;
 }
+
+.modal-news-date {
+    font-style: italic;
+    position: absolute;
+    bottom: 2rem;
+    right: 4rem;
+}
+
+.news-title {
+    font-style: italic;
+}
+
+.modal-title {
+    margin-bottom: 3.5rem;
+}
